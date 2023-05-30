@@ -1,0 +1,23 @@
+@use '../abstracts/index' as *;
+
+.profilePage {
+    padding: 1rem 20px;
+    color: $textLight;
+    text-transform: capitalize;
+    .generalInfo {
+        width: 30vw;
+        h1 {
+            margin-top: 3rem;
+        }
+        span {
+            color: $brand;
+        }
+    }
+    .bio {
+        width: 60vw;
+        height: 70vh;
+        padding: 2rem;
+        background-color: $primaryLight;
+        border-radius: 10px;
+    }
+}

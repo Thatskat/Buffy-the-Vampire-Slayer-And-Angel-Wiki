@@ -1,0 +1,27 @@
+@use '../abstracts/index' as *;
+
+.episodeInfoPage {
+    padding: 1rem 20px;
+    color: $textLight;
+    .headingSection {
+        width: 25vw;
+        text-transform: capitalize;
+        h1 {
+            margin-top: 2.5rem;
+        }
+    }
+    .episodeInformation{
+        width: 65vw;
+        text-transform: capitalize;
+        .overview {
+            background-color: $primaryLight;
+            border-radius: 10px;
+            border: darken($primaryLight, 10%) 1px solid;
+            padding: 2rem;
+            h3 {
+                margin: 0.5rem 0rem;
+            }
+        }
+  
+    }
+}

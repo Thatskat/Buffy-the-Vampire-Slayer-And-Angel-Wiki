@@ -1,0 +1,39 @@
+@use "../abstracts/index" as *;
+
+.crewPage {
+    color: $textLight;
+    padding: 1rem 20px;
+    .titleSection {
+        width: 30vw;
+        h1 {
+            margin-top: 3rem;
+            span {
+                color: $brand;
+            }
+        }
+    }
+    .crewProfiles {
+        width: 65vw;
+        .crewCollection {
+            margin: 0.5rem 0rem;
+            background-color: $primaryLight;
+            border-radius: 10px;
+            padding: 1rem;
+            border: darken($primaryLight, 10%) 1px solid;
+            h3 {
+                margin: 0.4rem 0rem;
+            }
+            p {
+                margin: 0.2rem 0rem;
+            }
+            .crewGrid {
+                margin: auto;
+                padding: 0.5rem 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,14 @@
+@use '../abstracts/index' as *;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.subText {
+    color: lighten($textLight, 30%);
+    width: 30vw;
+    line-height: 24px;
+}
+
+.bold {
+    font-weight: 500;
+}

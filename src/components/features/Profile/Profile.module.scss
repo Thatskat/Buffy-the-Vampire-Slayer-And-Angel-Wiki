@@ -1,0 +1,46 @@
+@use '@/styles/scss/abstracts/index' as *;
+
+.profileCard {
+    text-transform: capitalize;
+    display: inline;
+    width: 17vw;
+
+    a {
+        display: grid;
+        grid-template-columns: repeat(2, 0fr);
+        text-decoration: none;
+        background-color: $primaryLight;
+        border-radius: 10px;
+        width: 17vw;
+        padding: 0.5rem;
+        border: darken($primaryLight, 10%) 1px solid;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+            background-color: darken($primaryLight, 2%);
+        }
+
+        .image {
+            position: relative;
+            height: 10vh;
+            width: 5vw;
+            overflow: hidden;
+            .nextImage {
+                border-radius: 10px;
+                object-fit: cover;
+            }
+    
+        }
+        .info {
+            width: 16vw;
+            margin: 0.5rem 0.1rem;
+            
+            p{
+              color: $textLight;
+ 
+
+            }
+
+        }
+    }
+
+}

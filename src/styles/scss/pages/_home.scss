@@ -1,0 +1,35 @@
+@use "../abstracts/index" as *;
+
+.highlights {
+    width: 65vw;
+    background-image: linear-gradient(to right, #ececec, #d3d2e3, #b8b8d9, #9ba0d1, #7a89c8, #677dc1, #5171ba, #3765b3, #2e5fac, #2459a5, #19539f, #084d98);
+
+    #angelHighlight {
+        position: absolute;
+        z-index: 1;
+        top: 7rem;
+        right: 20px;
+        border-radius: 10px;
+    }
+    .img {
+        position: absolute;
+        z-index: 2;
+        top: 5rem;
+        right: 2rem;
+        rotate: (180deg);
+    }
+}
+
+.infoSection {
+    width: 35vw;
+    margin: 4rem 20px;
+    h1 {
+        font-size: 60px;
+        margin: 10px 0px;
+        span {
+            font-size: 6rem;
+            line-height: 0.9rem;
+            color: $brand;
+        }
+    }
+}

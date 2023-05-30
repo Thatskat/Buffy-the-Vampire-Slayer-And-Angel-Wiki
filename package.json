@@ -6,13 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-sass": "sass --no-source-map src/styles/scss/main.scss:src/styles/globals.css",
+    "watch-sass": "sass --watch --no-source-map src/styles/scss/main.scss:src/styles/globals.css"
   },
   "dependencies": {
+    "@theme-toggles/react": "^4.1.0",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
+    "framer-motion": "^10.12.12",
     "next": "13.4.3",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "react-modal": "^3.16.1"
+  },
+  "devDependencies": {
+    "sass": "^1.62.1"
   }
 }

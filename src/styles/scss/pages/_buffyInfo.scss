@@ -1,0 +1,75 @@
+@use "../abstracts/index" as *;
+
+.buffyInfoPage {
+    padding: 0px 0px 0px 20px;
+    color: $textLight;
+    .pageInfo {
+        width: 97vw;
+        h1 {
+            margin: 1rem 0rem;
+            padding: 3.5rem 0rem 0rem;
+            font-size: 60px;
+            color: $textLight;
+            span {
+                font-size: 4rem;
+                color: $brand;
+            }
+        }
+        p {
+            padding: 10px 5px;
+            width: 40vw;
+        }
+        #creatorTitle {
+            margin-top: 1rem;
+        }
+        h3 {
+            margin: 0px 0px 20px;
+        }
+        .trailer {
+            video {
+                margin: 50px 10px 0px ;
+                border-radius: 10px;
+                border-color: $brand;
+                box-shadow: 0 0 20px $brand;
+            }
+            .videoReference {
+                font-size: 0.8rem;
+                color: lighten($textLight, 30%);
+            }
+            h3 {
+                margin: 1.5rem 0rem;
+            }
+            .seasonsGrid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                .seasonCard {
+                    background-color: $brand;
+                    border-radius: 10px;
+                    width: 14vw;
+                    margin: 0.5rem 0rem;
+                    padding: 1rem;
+                    text-align: center;
+                    transition: all 0.7s ease-in-out;
+                    &:hover {
+                        background-color: $brandSecondary;
+
+                    }
+
+                    a{
+                        text-decoration: none;
+           
+                        
+                        h4 {
+                            text-decoration: none;
+                            color: $primaryLight;
+                        }
+                    }
+        
+                }
+            }
+        }
+    }
+    .colourSide {
+        width: 2vw;
+    }
+}
