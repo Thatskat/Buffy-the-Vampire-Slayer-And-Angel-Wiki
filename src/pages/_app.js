@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=G-MC0DFD7Z63`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
         strategy="afterInteractive"
       />
       <Script id="googleAnalyticsScript" strategy="afterInteractive">
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-          gtag('config', 'G-MC0DFD7Z63');
+          gtag('config', '${process.env.GA_ID}');
         `}
       </Script>
       <Head>
