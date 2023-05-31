@@ -60,7 +60,7 @@ const PrivacyPolicyPage = () => {
         <p>
           This Personal Information is obtained in many ways including
           interviews, correspondence, by telephone and facsimile, by email, and
-          from third parties. We don’t guarantee website links or policy of
+          from third parties. We don&apos;t guarantee website links or policy of
           authorised third parties.
         </p>
         <p>
