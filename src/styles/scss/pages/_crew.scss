@@ -20,9 +20,14 @@
             border-radius: 10px;
             padding: 1rem;
             border: darken($primaryLight, 10%) 1px solid;
-            h3 {
-                margin: 0.4rem 0rem;
+            a {
+                text-decoration: none;
+                color: $textLight;
+                h3 {
+                    margin: 0.4rem 0rem;
+                }
             }
+    
             p {
                 margin: 0.2rem 0rem;
             }
@@ -32,6 +37,17 @@
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1rem;
+                button {
+                    border: none;
+                    background-color: $primaryLight;
+                    svg {
+                        color: $brand;
+                        transition: all 0.5s ease-in-out;
+                        &:hover {
+                            color: $brandSecondary;
+                        }
+                    }
+                }
             }
         }
 

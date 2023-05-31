@@ -98,7 +98,11 @@ h5 {
   margin-top: 1rem;
 }
 .buffyInfoPage .pageInfo h3 {
-  margin: 0px 0px 20px;
+  margin: 20px 0px;
+}
+.buffyInfoPage .pageInfo .castGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .buffyInfoPage .pageInfo .trailer video {
   margin: 50px 10px 0px;
@@ -109,6 +113,15 @@ h5 {
 .buffyInfoPage .pageInfo .trailer .videoReference {
   font-size: 0.8rem;
   color: #60606c;
+}
+.buffyInfoPage .pageInfo .trailer .videoReference a {
+  color: #084D98;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+.buffyInfoPage .pageInfo .trailer .videoReference a:hover {
+  color: #0B2D68;
+  text-decoration: underline;
 }
 .buffyInfoPage .pageInfo .trailer h3 {
   margin: 1.5rem 0rem;
@@ -156,6 +169,11 @@ h5 {
 .episodesBySeason .pageHeading a {
   text-decoration: none;
   margin: 1rem 0.5rem;
+  color: #084D98;
+  transition: all 0.5s ease-in-out;
+}
+.episodesBySeason .pageHeading a:hover {
+  color: #0B2D68;
 }
 .episodesBySeason .episodeCards {
   width: 60vw;
@@ -208,8 +226,44 @@ h5 {
   width: 25vw;
   text-transform: capitalize;
 }
-.episodeInfoPage .headingSection h1 {
+.episodeInfoPage .headingSection a {
+  color: #084D98;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+.episodeInfoPage .headingSection a span {
+  padding-top: 10rem;
+}
+.episodeInfoPage .headingSection a:hover {
+  color: #0B2D68;
+  text-decoration: underline;
+}
+.episodeInfoPage .headingSection h2 span {
+  font-size: 60px;
+  color: #084D98;
+}
+.episodeInfoPage .headingSection h2 a {
+  margin: 0rem 0.5rem;
+  font-size: larger;
+}
+.episodeInfoPage .headingSection h2 a svg {
+  padding-top: 0.9rem;
+  color: #084D98;
+  transition: all 0.5s ease-in-out;
+}
+.episodeInfoPage .headingSection h2 a svg:hover {
+  color: #0B2D68;
+}
+.episodeInfoPage .headingSection .image {
+  position: relative;
+  width: 100%;
+  height: 30rem;
+  overflow: hidden;
   margin-top: 2.5rem;
+}
+.episodeInfoPage .headingSection .image img {
+  object-fit: cover;
+  border-radius: 10px;
 }
 .episodeInfoPage .episodeInformation {
   width: 65vw;
@@ -220,9 +274,19 @@ h5 {
   border-radius: 10px;
   border: #e7dada 1px solid;
   padding: 2rem;
+  height: 80vh;
+  overflow-y: scroll;
 }
 .episodeInfoPage .episodeInformation .overview h3 {
   margin: 0.5rem 0rem;
+}
+.episodeInfoPage .episodeInformation .overview h4 {
+  margin: 1rem 0rem;
+}
+.episodeInfoPage .episodeInformation .overview .episodeGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .crewPage {
@@ -248,7 +312,11 @@ h5 {
   padding: 1rem;
   border: #e7dada 1px solid;
 }
-.crewPage .crewProfiles .crewCollection h3 {
+.crewPage .crewProfiles .crewCollection a {
+  text-decoration: none;
+  color: #18181b;
+}
+.crewPage .crewProfiles .crewCollection a h3 {
   margin: 0.4rem 0rem;
 }
 .crewPage .crewProfiles .crewCollection p {
@@ -261,6 +329,44 @@ h5 {
   flex-wrap: wrap;
   gap: 1rem;
 }
+.crewPage .crewProfiles .crewCollection .crewGrid button {
+  border: none;
+  background-color: #fbf9f9;
+}
+.crewPage .crewProfiles .crewCollection .crewGrid button svg {
+  color: #084D98;
+  transition: all 0.5s ease-in-out;
+}
+.crewPage .crewProfiles .crewCollection .crewGrid button svg:hover {
+  color: #0B2D68;
+}
+
+.crewByCategory {
+  padding: 1rem 20px;
+}
+.crewByCategory .titleSection {
+  width: 30vw;
+}
+.crewByCategory .titleSection h1 {
+  margin-top: 3.5rem;
+}
+.crewByCategory .titleSection h1 span {
+  color: #084D98;
+}
+.crewByCategory .profiles {
+  background-color: #fbf9f9;
+  width: 65vw;
+  padding: 2rem;
+  height: 80vh;
+  overflow-y: scroll;
+  border-radius: 10px;
+  border: #e7dada 1px solid;
+}
+.crewByCategory .profiles .profileGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
 
 .profilePage {
   padding: 1rem 20px;
@@ -270,18 +376,54 @@ h5 {
 .profilePage .generalInfo {
   width: 30vw;
 }
-.profilePage .generalInfo h1 {
-  margin-top: 3rem;
-}
-.profilePage .generalInfo span {
+.profilePage .generalInfo a {
+  text-decoration: none;
   color: #084D98;
+  transition: all 0.5s ease-in-out;
+}
+.profilePage .generalInfo a span {
+  margin-top: 2rem;
+}
+.profilePage .generalInfo a:hover {
+  color: #0B2D68;
+  text-decoration: underline;
+}
+.profilePage .generalInfo .image {
+  width: 80%;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2.6rem;
+}
+.profilePage .generalInfo .image img {
+  border-radius: 10px;
+  object-fit: cover;
 }
 .profilePage .bio {
-  width: 60vw;
+  width: 65vw;
   height: 70vh;
   padding: 2rem;
   background-color: #fbf9f9;
   border-radius: 10px;
+  border: #e7dada 1px solid;
+}
+.profilePage .bio .characters {
+  margin: 0.5rem;
+  display: inline;
+}
+.profilePage .bio .characters:first-child {
+  margin-left: 0.2rem;
+}
+.profilePage .bio h3 {
+  margin: 1.2rem 0rem 1rem;
+}
+.profilePage .bio h3 a svg {
+  color: #084D98;
+  padding-top: 0.6rem !important;
+  transition: 0.5s all ease-in-out;
+}
+.profilePage .bio h3 a svg:hover {
+  color: #0B2D68;
 }
 
 .privacyPolicy {
@@ -304,12 +446,36 @@ h5 {
   width: 60vw;
   padding: 2rem 20px;
 }
+.privacyPolicy .policySection a {
+  color: #18181b;
+  text-decoration: none;
+}
+.privacyPolicy .policySection a:hover {
+  text-decoration: underline;
+}
 .privacyPolicy .policySection h3 {
   margin: 0.5rem 0rem;
 }
 .privacyPolicy .policySection p {
   margin: 0.6rem 0rem;
 }
+.privacyPolicy .policySection p span {
+  font-weight: 600;
+  color: #084D98;
+}
 .privacyPolicy .policySection ul {
   list-style: disc !important;
+}
+.privacyPolicy .contactLinks a {
+  display: block;
+  padding: 0.1rem 0rem;
+  text-decoration: none;
+  color: #084D98;
+  transition: all 0.5s ease-in-out;
+}
+.privacyPolicy .contactLinks a:hover {
+  color: #0B2D68;
+}
+.privacyPolicy .contactLinks a svg {
+  margin-right: 10px;
 }

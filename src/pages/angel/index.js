@@ -26,7 +26,8 @@ const AngelOverviewPage = ({ angelEpisodes }) => {
                 endingDescription={`"Angel" is a gripping and poignant spin-off series that delves into the darker corners of the Buffyverse, exploring themes of redemption, sacrifice, and the constant battle between light and darkness, ultimately solidifying its own unique legacy in the world of supernatural television.`}
               />
               <h3 id="creatorTitle">Created By</h3>
-              {angelEpisodes.map((episode) =>
+             <div className="castGrid">
+             {angelEpisodes.map((episode) =>
                 episode?.writer.map(
                   (writer, index) =>
                     index < 2 && (
@@ -38,8 +39,10 @@ const AngelOverviewPage = ({ angelEpisodes }) => {
                     )
                 )
               )}
+             </div>
+    
               <h3>Starring</h3>
-              <div className="grid">
+              <div className="castGrid">
                 {angelEpisodes.map((episode) =>
                   episode?.episodeCast.map(
                     (cast, index) =>
@@ -82,7 +85,7 @@ const AngelOverviewPage = ({ angelEpisodes }) => {
 };
 
 export async function getStaticProps() {
-  const response = await fetch("http://localhost:3000/api/angel/season/3/5");
+  const response = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/angel/season/3/5");
   const angelEpisodes = await response.json();
 
   return {

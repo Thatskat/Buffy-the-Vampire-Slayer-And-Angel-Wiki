@@ -1,6 +1,11 @@
+import Head from "next/head";
+
 const AboutPage = () => {
   return (
     <div className="grid privacyPolicy">
+      <Head>
+        <title>About Us | Buffy the Vampire Slayer + Angel Wiki</title>
+      </Head>
       <div className="infoSection">
         <h1>
           About Us <br></br> <span>+</span>

@@ -1,16 +1,33 @@
 import { useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 import Modal from "react-modal";
+import { FiMoreVertical } from "react-icons/fi";
 
 const PrivacyPolicyPage = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="grid privacyPolicy">
-      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}></Modal>
+      <Head>
+        <title>Privacy Policy | Buffy the Vampire Slayer + Angel Wiki</title>
+      </Head>
+      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+        Policy Updates This Policy may change from time to time and is available
+        on our website. Privacy Policy Complaints and Enquiries If you have any
+        queries or complaints about our Privacy Policy please contact us at:
+        [Your business address] [Your business email address] [Your business
+        phone number]
+      </Modal>
       <div className="infoSection">
         <h1>
-          Our Privacy <br></br> Policy <br></br> <span>+<button onClick={() => setIsOpen(true)}>Open Modal</button></span>
+          Our Privacy <br></br> Policy <br></br>{" "}
+          <span>
+            +
+            <button onClick={() => setIsOpen(true)}>
+              <FiMoreVertical />
+            </button>
+          </span>
         </h1>
         <p className="subText">
           Buffy the Vampire Slayer + Angel Wiki is committed to providing

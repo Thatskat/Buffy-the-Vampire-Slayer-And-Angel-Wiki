@@ -1,15 +1,16 @@
 import Link from "next/link";
+import Head from "next/head";
 
 import {
   AiFillPhone,
   AiOutlineMail,
-  AiOutlineInstagram,
-  AiOutlineFacebook,
-  AiOutlineTwitter,
 } from "react-icons/ai";
 const ContactPage = () => {
   return (
     <div className="grid privacyPolicy">
+      <Head>
+        <title>Contact Us | Buffy the Vampire Slayer + Angel Wiki</title>
+      </Head>
       <div className="infoSection">
         <h1>
           Contact <br></br>Us<br></br> <span>+ </span>
@@ -20,7 +21,7 @@ const ContactPage = () => {
           questions or need assistance, please don't hesitate to contact us.
           Here's how you can get in touch:
         </p>
-        <p>
+        <p className="contactLinks">
           {" "}
           <Link href="tel: 1300 655 506">
             <AiFillPhone /> 1300 655 506

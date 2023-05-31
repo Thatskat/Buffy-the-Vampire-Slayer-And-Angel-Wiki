@@ -7,20 +7,50 @@ import Profile from "@/components/features/Profile/Profile";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const CrewPage = ({ actors, writers, directors }) => {
-  const [prev, setPrev] = useState(0);
-  const [next, setNext] = useState(2);
+  const [prevActor, setPrevActor] = useState(0);
+  const [nextActor, setNextActor] = useState(2);
+  const [prevWriter, setPrevWriter] = useState(0);
+  const [nextWriter, setNextWriter] = useState(2);
+  const [prevDirector, setPrevDirector] = useState(1);
+  const [nextDirector, setNextDirector] = useState(3);
 
-  const handleNext = () => {
-    if (next < 9) {
-      setNext(next + 3);
-      setPrev(prev + 3);
+  // PAGINATION NEXT
+  const handleNextActor = () => {
+    if (nextActor < 9) {
+      setNextActor(nextActor + 3);
+      setPrevActor(prevActor + 3);
     }
   };
 
-  const handlePrev = () => {
-    if (prev > 0) {
-      setNext(next - 3);
-      setPrev(prev - 3);
+  const handleNextWriter = () => {
+    if (nextWriter < 9) {
+      setNextWriter(nextWriter + 3);
+      setPrevWriter(prevWriter + 3);
+    }
+  };
+  const handleNextDirector = () => {
+    if (nextDirector < 10) {
+      setNextDirector(nextDirector + 3);
+      setPrevDirector(prevDirector + 3);
+    }
+  };
+  // PAGINATION PREV
+  const handlePrevActor = () => {
+    if (prevActor > 0) {
+      setNextActor(nextActor - 3);
+      setPrevActor(prevActor - 3);
+    }
+  };
+  const handlePrevWriter = () => {
+    if (prevWriter > 0) {
+      setNextWriter(nextWriter - 3);
+      setPrevWriter(prevWriter - 3);
+    }
+  };
+  const handlePrevDirector = () => {
+    if (prevDirector > 1) {
+      setNextDirector(nextDirector - 3);
+      setPrevDirector(prevDirector - 3);
     }
   };
 
@@ -63,24 +93,26 @@ const CrewPage = ({ actors, writers, directors }) => {
             television.
           </p>
           <div className="crewGrid">
-            <button onClick={handlePrev}>
+            <button onClick={handlePrevActor}>
               <IoIosArrowBack />
             </button>
             {actors.map(
               (actor, index) =>
-                index <= next &&
-                index >= prev && (
+                index <= nextActor &&
+                index >= prevActor && (
                   <Profile key={actor._id} data={actor} typeLink="actors" />
                 )
             )}
-            <button onClick={handleNext}>
+            <button onClick={handleNextActor}>
               <IoIosArrowForward />
             </button>
           </div>
         </div>
 
         <div className="crewCollection">
-          <Link href={'/crew/directors'}><h3>The Directors</h3></Link>
+          <Link href={"/crew/directors"}>
+            <h3>The Directors</h3>
+          </Link>
           <p>
             Discover the visionary directors who skillfully crafted the
             immersive worlds of Buffy the Vampire Slayer and Angel, bringing to
@@ -88,10 +120,13 @@ const CrewPage = ({ actors, writers, directors }) => {
             moments that have enthralled fans around the globe.
           </p>
           <div className="crewGrid">
+            <button onClick={handlePrevDirector}>
+              <IoIosArrowBack />
+            </button>
             {directors.map(
               (director, index) =>
-                0 < index &&
-                index < 11 && (
+                index <= nextDirector &&
+                index >= prevDirector && (
                   <Profile
                     key={director._id}
                     data={director}
@@ -99,32 +134,47 @@ const CrewPage = ({ actors, writers, directors }) => {
                   />
                 )
             )}
+            <button onClick={handleNextDirector}>
+              <IoIosArrowForward />
+            </button>
           </div>
         </div>
-
-        <h3>The Writers</h3>
-        <p>
-          Unleash your imagination and delve into the creative genius of the
-          talented writers behind Buffy the Vampire Slayer and Angel, as they
-          wove intricate narratives, compelling character arcs, and
-          thought-provoking themes into these iconic shows, forever captivating
-          our hearts and minds.
-        </p>
-        {writers.map(
-          (writer, index) =>
-            index < 10 && (
-              <Profile key={writer._id} data={writer} typeLink="writers" />
-            )
-        )}
+        <div className="crewCollection">
+          <Link href={'/crew/writers'}>
+          <h3>The Writers</h3></Link>
+     
+          <p>
+            Unleash your imagination and delve into the creative genius of the
+            talented writers behind Buffy the Vampire Slayer and Angel, as they
+            wove intricate narratives, compelling character arcs, and
+            thought-provoking themes into these iconic shows, forever
+            captivating our hearts and minds.
+          </p>
+          <div className="crewGrid">
+            <button onClick={handlePrevWriter}>
+              <IoIosArrowBack />
+            </button>
+            {writers.map(
+              (writer, index) =>
+              index <= nextWriter &&
+              index >= prevWriter && (
+                  <Profile key={writer._id} data={writer} typeLink="writers" />
+                )
+            )}
+            <button onClick={handleNextWriter}>
+              <IoIosArrowForward />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export async function getStaticProps() {
-  const aResponse = await fetch("http://localhost:3000/api/actors");
-  const wResponse = await fetch("http://localhost:3000/api/writers");
-  const dReponse = await fetch("http://localhost:3000/api/directors");
+  const aResponse = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/actors");
+  const wResponse = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/writers");
+  const dReponse = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/directors");
   const actors = await aResponse.json();
   const writers = await wResponse.json();
   const directors = await dReponse.json();

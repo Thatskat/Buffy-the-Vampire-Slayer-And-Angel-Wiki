@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { FaImdb } from "react-icons/fa";
+import { FaImdb, FaArrowLeft } from "react-icons/fa";
 
 const ActorPage = ({ actor }) => {
   return (
@@ -12,28 +12,34 @@ const ActorPage = ({ actor }) => {
         <meta name="description" description={actor.name} />
       </Head>
       <div className="generalInfo">
-        <h1>
-          {actor.name}
-          <br></br>
-          <span>+</span>
+        <Link href={"/crew/actors"}>
+          <span>
+            <FaArrowLeft />
+          </span>
+          Back to Actors Page
+        </Link>
+        <div className="image">
+          <Image
+            src={actor.profilePicture}
+            fill={true}
+            alt={actor.name}
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div className="bio">
+        <h1>{actor.name}</h1>
+        <p className="subText">
+          {actor.characterPlayed.map((character) => (
+            <div className="characters">{character}</div>
+          ))}
+        </p>
+        <h3>
+          Bio{" "}
           <Link href={actor.imdbProfile} target="_blank">
             <FaImdb />
           </Link>
-        </h1>
-        <p className="subText">
-          {actor.characterPlayed.map((character) => character)}
-        </p>
-        <Image
-          src={actor.profilePicture}
-          width={200}
-          height={200}
-          alt={actor.name}
-        />
-      </div>
-      <div className="bio">
-        <h3>Characters Played</h3>
-        <p>{actor.characterPlayed.map((character) => character)}</p>
-        <h3>Bio</h3>
+        </h3>
         <p>{actor.bio}</p>
       </div>
     </div>
@@ -41,7 +47,7 @@ const ActorPage = ({ actor }) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`http://localhost:3000/api/actors`);
+  const response = await fetch(`https://btvs-angel-api-production-3a72.up.railway.app/api/actors`);
   const actors = await response.json();
   const idList = actors.map((actor) => actor._id);
   const paths = idList.map((id) => ({ params: { actorId: id.toString() } }));
@@ -53,7 +59,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const response = await fetch(`http://localhost:3000/api/actors`);
+  const response = await fetch(`https://btvs-angel-api-production-3a72.up.railway.app/api/actors`);
   const actors = await response.json();
   const actorQuery = context.params.actorId;
   const actorIdMatch = actors.filter(

@@ -23,7 +23,11 @@
             margin-top: 1rem;
         }
         h3 {
-            margin: 0px 0px 20px;
+            margin: 20px 0px;
+        }
+        .castGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
         .trailer {
             video {
@@ -35,10 +39,20 @@
             .videoReference {
                 font-size: 0.8rem;
                 color: lighten($textLight, 30%);
+                a {
+                    color: $brand;
+                    text-decoration: none;
+                    transition: all 0.5s ease-in-out;
+                    &:hover {
+                        color: $brandSecondary;
+                        text-decoration: underline;
+                    }
+                }
             }
             h3 {
                 margin: 1.5rem 0rem;
             }
+    
             .seasonsGrid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);

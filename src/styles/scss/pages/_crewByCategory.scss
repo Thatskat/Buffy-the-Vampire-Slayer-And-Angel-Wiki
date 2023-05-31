@@ -1,0 +1,28 @@
+@use '../abstracts/index' as *;
+
+.crewByCategory{
+    padding: 1rem 20px;
+    .titleSection {
+        width: 30vw;
+        h1 {
+            margin-top: 3.5rem;
+            span {
+                color: $brand;
+            }
+        }
+    }
+    .profiles {
+        background-color: $primaryLight;
+        width: 65vw;
+        padding: 2rem;
+        height: 80vh;
+        overflow-y: scroll;
+        border-radius: 10px;
+        border: darken($primaryLight, 10%) 1px solid;
+        .profileGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+    }
+}

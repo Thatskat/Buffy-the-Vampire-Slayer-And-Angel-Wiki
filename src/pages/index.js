@@ -32,7 +32,7 @@ const index = () => {
       </div>
       <div className="highlights">
         <motion.a whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <Image src="/test/gif-test.webp" width={100} height={100} />
+          {/* <Image src="/test/gif-test.webp" width={100} height={100} /> */}
         </motion.a>
       </div>
     </div>

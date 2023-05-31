@@ -2,43 +2,90 @@ import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
 
-const BuffyEpisodesPage = ({ episode }) => {
-  return <div className="grid episodeInfoPage">
-    <Head>
-      <title>{episode.episodeName} | Buffy the Vampire Slayer</title>
-      <meta name="description" description={`Buffy the Vampire Slayer season ${episode.seasonNumber} episode ${episode.episodeNumber}`}/>
-    </Head>
-    <div className='headingSection'>
-      <Link href={`/buffy/${episode.seasonNumber}`}>Return to all season {episode.seasonNumber} episodes</Link>
-      <h1>{episode?.episodeName}<br></br><span>+</span></h1>
-      <p className="subText">Season {episode.seasonNumber} Episode {episode.episodeNumber}</p>
-      <p>Episode aired {episode.airDate}</p>
-      <div className="image">
-        <Image src={episode.episodeScreenshot} width={200} height={200} />
-      </div>
-    </div>
-    <div className="episodeInformation">
-      <div className="overview">
-      <h3>Episode Plot</h3>
-      <p>{episode.description}</p>
-      <h3>{episode.episodeName}'s Crew</h3>
-      <h4>Director</h4>
-      {episode.director && episode.director.map((director) => <p key={director._id}>{director.name}</p>)}
-      <h4>Writers</h4>
-      {episode.writer && episode.writer.map((writer) => <p key={writer._id}>{writer.name}</p>)}
-      <h4>Cast</h4>
-      {episode.episodeCast && episode.episodeCast.map((cast) => <p key={cast._id}>{cast.name}</p>)}
-      </div>
-        <h3>Behind the Scenes</h3>
-        <p>{episode.trivia}</p>
-        <Link href={episode.imdbLink} target="_bkank">IMDB LINK</Link>
-    </div>
+import Profile from "@/components/features/Profile/Profile";
 
-    </div>;
+import { FaImdb, FaArrowLeft } from "react-icons/fa";
+
+const BuffyEpisodesPage = ({ episode }) => {
+  return (
+    <div className="grid episodeInfoPage">
+      <Head>
+        <title>{episode.episodeName} | Buffy the Vampire Slayer</title>
+        <meta
+          name="description"
+          description={`Buffy the Vampire Slayer season ${episode.seasonNumber} episode ${episode.episodeNumber}`}
+        />
+      </Head>
+      <div className="headingSection">
+        <Link href={`/buffy/${episode.seasonNumber}`}>
+          <span>
+            <FaArrowLeft />
+          </span>
+          Return to all season {episode.seasonNumber} episodes
+        </Link>
+
+        <div className="image">
+          <Image
+            src={episode.episodeScreenshot}
+            fill={true}
+            alt={episode.episodeName}
+          />
+        </div>
+        <h2>
+          <span>+</span>
+        </h2>
+      </div>
+      <div className="episodeInformation">
+        <div className="overview">
+          <h1>{episode?.episodeName}</h1>
+          <p className="subText">
+            Season {episode.seasonNumber} Episode {episode.episodeNumber}
+          </p>
+          <p className="subText">Episode aired {episode.airDate}</p>
+          <h3>Plot          <Link
+            href={episode.imdbLink}
+            target="_blank"
+            title={`${episode.episodeName} IMDB Page`}
+          >
+            <FaImdb />
+          </Link></h3>
+          <p>{episode.description}</p>
+          <h3>Behind the Scenes</h3>
+          <p>{episode.trivia}</p>
+
+          <h4>Director</h4>
+          <div className="episodeGrid">
+            {episode.director &&
+              episode.director.map((director) => (
+                <Profile
+                  key={director._id}
+                  data={director}
+                  typeLink={"directors"}
+                />
+              ))}
+          </div>
+          <h4>Writers</h4>
+          <div className="episodeGrid">
+            {episode.writer &&
+              episode.writer.map((writer) => (
+                <Profile key={writer._id} data={writer} typeLink={"writers"} />
+              ))}
+          </div>
+          <h4>Cast</h4>
+          <div className="episodeGrid">
+            {episode.episodeCast &&
+              episode.episodeCast.map((cast) => (
+                <Profile key={cast._id} data={cast} typeLink={"actors"} />
+              ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`http://localhost:3000/api/buffy`);
+  const response = await fetch(`https://btvs-angel-api-production-3a72.up.railway.app/api/buffy`);
   const episodes = await response.json();
 
   const paths = await episodes.map((episode) => ({
@@ -55,7 +102,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const response = await fetch(
-    `http://localhost:3000/api/buffy/season/${context.params.seasonNumber.toString()}/`
+    `https://btvs-angel-api-production-3a72.up.railway.app/api/buffy/season/${context.params.seasonNumber.toString()}/`
   );
   const episodes = await response.json();
   const episodeQuery = context.params.episodeNumber;

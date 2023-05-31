@@ -12,7 +12,7 @@ const BuffyEpisodesBySeasonPage = ({ season }) => {
       </Head>
       <div className="pageHeading">
         <Link href="/buffy">
-          <AiOutlineArrowLeft />
+          <span><AiOutlineArrowLeft /></span>
           Back to Buffy the Vampire Slayer Overview
         </Link>
         <h1>
@@ -40,7 +40,7 @@ const BuffyEpisodesBySeasonPage = ({ season }) => {
               <div className="cardInfo">
               <p className="subText">Season {episodes.seasonNumber} Episode {episodes.episodeNumber}</p>
               <h3>{episodes.episodeName}</h3>
-              <p>{episodes.description}<br></br><Link             href={`/buffy/${episodes.seasonNumber}/${episodes.episodeNumber}`}>See more <AiOutlineArrowRight/></Link></p>
+              <p>{episodes.description}<br></br><Link             href={`/buffy/${episodes.seasonNumber}/${episodes.episodeNumber}`}>See more</Link></p>
               </div>
 
             </div>
@@ -51,7 +51,7 @@ const BuffyEpisodesBySeasonPage = ({ season }) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch("http://localhost:3000/api/buffy");
+  const response = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/buffy");
   const episodes = await response.json();
   const seasonList = episodes.map((episode) => episode.seasonNumber);
   const paths = seasonList.map((season) => ({
@@ -65,7 +65,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const response = await fetch("http://localhost:3000/api/buffy");
+  const response = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/buffy");
   const episodes = await response.json();
   const seasonQuery = context.params.seasonNumber;
   const seasonMatch = episodes.filter(
