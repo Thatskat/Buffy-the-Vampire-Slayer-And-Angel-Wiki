@@ -8,13 +8,13 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.socialMedia}>
-        <Link href="https://www.instagram.com/" target="_blank">
+        <Link href="https://www.instagram.com/" target="_blank" title="Instagram">
           <AiOutlineInstagram />
         </Link>
-        <Link href="https://twitter.com/" target="_blank">
+        <Link href="https://twitter.com/" target="_blank" title="Twitter">
           <AiOutlineTwitter />
         </Link>
-        <Link href="https://www.facebook.com/" target="_blank">
+        <Link href="https://www.facebook.com/" target="_blank" title="Facebook">
           <AiOutlineFacebook />
         </Link>
       </div>
