@@ -36,8 +36,8 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Script
-        strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
+        strategy="afterInteractive"
       />
       <Script id="googleAnalyticsScript" strategy="afterInteractive">
         {`
