@@ -36,7 +36,7 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className={styles.themeToggle}>
-        <ThemeToggler />
+        {/* <ThemeToggler /> */}
       </div>
     </header>
   );
