@@ -22,7 +22,7 @@ const karla = Karla({
   style: ["normal", "italic"],
 });
 
-export default function App({ Component, pageProps, router }) {
+export default function App({ Component, pageProps }) {
   const theme = useTheme();
   const router = useRouter();
 
@@ -57,7 +57,7 @@ export default function App({ Component, pageProps, router }) {
       >
         <div className={`${karla.className} ${theme}`}>
           <Navbar />
-          <Component {...pageProps} key={router.asPath} />
+          <Component {...pageProps} />
           <Footer />
         </div>
       </AnimatePresence>
