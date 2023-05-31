@@ -102,7 +102,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const response = await fetch(
-    `https://btvs-angel-api-production-3a72.up.railway.app/pi/angel/season/${context.params.seasonNumber.toString()}/`
+    `https://btvs-angel-api-production-3a72.up.railway.app/api/angel/season/${context.params.seasonNumber.toString()}/`
   );
   const episodes = await response.json();
   const episodeQuery = context.params.episodeNumber;
