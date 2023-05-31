@@ -35,7 +35,7 @@ const WriterInfoPage = ({ writers }) => {
 };
 
 export async function getStaticProps() {
-  const response = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/writers");
+  const response = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/writers");
   const writers = await response.json();
 
   return {
