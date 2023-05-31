@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
   }, [router.events]);
   return (
     <ThemeProvider>
-      <Script
+      <Script async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
       />
       <Script id="googleAnalyticsScript" strategy="afterInteractive">
