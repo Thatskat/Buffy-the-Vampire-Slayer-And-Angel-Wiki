@@ -12,6 +12,10 @@ const AngelOverviewPage = ({ angelEpisodes }) => {
         <title>
           Angel | Buffy the Vampire Slayer + Angel Wiki
         </title>
+        <meta
+          name="description"
+          description={`Angel Tv Show 1999 - 2004`}
+        />
       </Head>
       <div className="grid">
         <div className="pageInfo">

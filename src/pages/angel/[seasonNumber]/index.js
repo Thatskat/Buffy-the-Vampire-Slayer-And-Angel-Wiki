@@ -9,6 +9,10 @@ const AngelEpisodesBySeasonPage = ({ season }) => {
     <div className="grid episodesBySeason">
       <Head>
         <title>Season {season[0].seasonNumber} | Angel</title>
+        <meta
+          name="description"
+          description={`Angel Tv Show Season ${season[0].seasonNumber}`}
+        />
       </Head>
       <div className="pageHeading">
         <Link href="/angel">

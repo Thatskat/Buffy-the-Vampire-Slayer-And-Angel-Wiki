@@ -5,6 +5,10 @@ const TermsOfUsePage = () => {
     <div className="grid privacyPolicy">
       <Head>
         <title>Terms of Use | Buffy the Vampire Slayer + Angel Wiki</title>
+        <meta
+          name="description"
+          description={`Buffy the Vampire Slayer + Angel Wiki Terms of Use`}
+        />
       </Head>
       <div className="infoSection">
         <h1>
