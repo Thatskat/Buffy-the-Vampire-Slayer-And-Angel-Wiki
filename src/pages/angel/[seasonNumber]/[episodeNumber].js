@@ -85,7 +85,7 @@ const AngelEpisodesPage = ({ episode }) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`https://btvs-angel-api-production-3a72.up.railway.app//api/angel`);
+  const response = await fetch(`https://btvs-angel-api-production-3a72.up.railway.app/api/angel`);
   const episodes = await response.json();
 
   const paths = await episodes.map((episode) => ({
