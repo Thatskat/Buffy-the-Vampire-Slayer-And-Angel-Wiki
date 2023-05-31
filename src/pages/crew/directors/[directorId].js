@@ -29,8 +29,8 @@ const DirectorPage = ({ director }) => {
       <div className="bio">
         <h1>{director.name}</h1>
         <p className="subText">
-          {director?.characterPlayed.map((character) => (
-            <div className="characters">{character}</div>
+          {director?.characterPlayed.map((character, index) => (
+            <div className="characters" key={index}>{character}</div>
           ))}
         </p>
         <h3>

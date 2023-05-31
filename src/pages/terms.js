@@ -49,7 +49,7 @@ const TermsOfUsePage = () => {
         </p>
         <p>
           <span>b.</span> You will not engage in any activity that may disrupt or interfere
-          with the functioning of the wiki or its users' experience, including
+          with the functioning of the wiki or its users&apos; experience, including
           but not limited to hacking, spamming, or distributing malware.
         </p>
         <p>

@@ -39,7 +39,7 @@ const AboutPage = () => {
           fascinating relationships.
         </p>
         <p>
-          But it's not just about the characters. Our wiki is dedicated to
+          But it&apos;s not just about the characters. Our wiki is dedicated to
           cataloging the intricate mythology, the supernatural creatures, and
           the thrilling storylines that kept viewers hooked throughout both
           series. Dive into the world of Slayers, vampires, demons, and other
@@ -48,7 +48,7 @@ const AboutPage = () => {
           characters.
         </p>
         <p>
-          Whether you're a die-hard fan, a newcomer curious to learn more, or
+          Whether you&apos;re a die-hard fan, a newcomer curious to learn more, or
           simply someone who appreciates well-crafted storytelling, our Buffy
           the Vampire Slayer and Angel Wiki welcomes you with open arms. Join
           our passionate community of fans, share your insights, and embark on a

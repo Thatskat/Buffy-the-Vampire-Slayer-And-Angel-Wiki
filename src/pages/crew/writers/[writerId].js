@@ -30,8 +30,8 @@ const WriterPage = ({writer}) => {
       <div className="bio">
         <h1>{writer.name}</h1>
         <p className="subText">
-          {writer?.characterPlayed.map((character) => (
-            <div className="characters">{character}</div>
+          {writer?.characterPlayed.map((character, index) => (
+            <div className="characters" key={index}>{character}</div>
           ))}
         </p>
         <h3>

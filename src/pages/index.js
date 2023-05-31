@@ -21,7 +21,7 @@ const index = () => {
           of these iconic series created by Joss Whedon, as we unravel the
           intricate mythology, explore unforgettable characters, and relive the
           thrilling adventures that have captivated fans for decades. From
-          Buffy's fierce battles against the forces of darkness to Angel's quest
+          Buffy&apos;s fierce battles against the forces of darkness to Angel&apos;s quest
           for redemption, our wiki is a comprehensive resource that celebrates
           the enduring legacy of these shows. Join our passionate community,
           share your insights, and immerse yourself in the timeless themes of

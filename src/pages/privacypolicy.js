@@ -80,7 +80,7 @@ const PrivacyPolicyPage = () => {
         <h3>Sensitive Information</h3>
         <p>
           Sensitive information is defined in the Privacy Act to include
-          information or opinion about such things as an individual's racial or
+          information or opinion about such things as an individual&apos;s racial or
           ethnic origin, political opinions, membership of a political
           association, religious or philosophical beliefs, membership of a trade
           union or other professional body, criminal record or health

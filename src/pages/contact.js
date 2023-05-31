@@ -18,8 +18,8 @@ const ContactPage = () => {
         <p className="subText">
           Thank you for visiting the Buffy the Vampire Slayer and Angel Wiki! We
           value your feedback, suggestions, and inquiries. If you have any
-          questions or need assistance, please don't hesitate to contact us.
-          Here's how you can get in touch:
+          questions or need assistance, please don&apos;t hesitate to contact us.
+          Here&apos;s how you can get in touch:
         </p>
         <p className="contactLinks">
           {" "}
@@ -59,7 +59,7 @@ const ContactPage = () => {
           <Link href="mailto: techsupport@buffyangelwiki.com.au">
             techsupport@buffyangelwiki.com.au
           </Link>
-          . Please provide detailed information about the problem you're
+          . Please provide detailed information about the problem you&apos;re
           experiencing, including any error messages or screenshots, so we can
           assist you more effectively.
         </p>

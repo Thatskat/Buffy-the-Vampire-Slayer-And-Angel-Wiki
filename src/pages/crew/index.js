@@ -72,7 +72,7 @@ const CrewPage = ({ actors, writers, directors }) => {
           groundbreaking shows. Explore the profiles of the brilliant cast
           members who embodied the beloved characters, uncover the visionary
           minds behind the camera, and gain insights into the creative process
-          that breathed life into these iconic series. From Joss Whedon's
+          that breathed life into these iconic series. From Joss Whedon&apos;s
           imaginative storytelling to the unforgettable performances that made
           us laugh, cry, and cheer, this wiki celebrates the extraordinary
           individuals who made Buffy and Angel the cultural phenomena they are
