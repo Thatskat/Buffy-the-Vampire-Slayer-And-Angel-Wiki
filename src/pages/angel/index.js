@@ -14,7 +14,7 @@ const AngelOverviewPage = ({ angelEpisodes }) => {
         </title>
         <meta
           name="description"
-          description={`Angel is a popular TV show that aired from 1999 to 2004, consisting of five seasons and 110 episodes. Find out more about the show, its characters, and its most memorable episodes.`}
+          content={`Angel is a popular TV show that aired from 1999 to 2004, consisting of five seasons and 110 episodes. Find out more about the show, its characters, and its most memorable episodes.`}
         />
       </Head>
       <div className="grid">

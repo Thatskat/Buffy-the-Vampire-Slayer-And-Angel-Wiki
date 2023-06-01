@@ -7,7 +7,7 @@ const TermsOfUsePage = () => {
         <title>Terms of Use | Buffy the Vampire Slayer + Angel Wiki</title>
         <meta
           name="description"
-          description={`Buffy the Vampire Slayer + Angel Wiki Terms of Use`}
+          content={`Buffy the Vampire Slayer + Angel Wiki Terms of Use`}
         />
       </Head>
       <div className="infoSection">
