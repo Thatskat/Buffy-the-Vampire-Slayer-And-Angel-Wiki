@@ -10,7 +10,7 @@ const index = () => {
         <title>Home | Buffy the Vampire Slayer + Angel Wiki</title>
         <meta
           name="description"
-          description={`Buffy the Vampire Slayer, Angel, Buffyverse, Supernatural Wiki`}
+          description={`"Buffy the Vampire Slayer" and "Angel" are two popular TV shows from the late 90s and early 2000s that featured demons, vampires, and supernatural elements. Learn more about the shows, their storylines, and the actors who brought them to life.`}
         />
       </Head>
       <div className="infoSection">
