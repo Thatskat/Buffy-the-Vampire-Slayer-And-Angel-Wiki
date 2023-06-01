@@ -32,7 +32,7 @@ const Footer = () => {
           <li>
             <Link href="/crew">Crew Profiles</Link>
           </li>
-          <div>
+          <ul>
           <li>
             <Link href="/privacypolicy">Privacy Policy</Link>
           </li>
@@ -45,7 +45,7 @@ const Footer = () => {
           <li>
             <Link href="/contact">Contact Us</Link>
           </li>
-          </div>
+          </ul>
         </ul>
       </div>
       <div>
