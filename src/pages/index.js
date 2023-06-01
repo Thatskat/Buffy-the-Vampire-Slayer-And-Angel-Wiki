@@ -10,7 +10,8 @@ const index = () => {
         <title>Home | Buffy the Vampire Slayer + Angel Wiki</title>
         <meta
           name="description"
-          description={`Buffy the Vampire Slayer and Angel TV Show wiki`} />
+          description={`Buffy the Vampire Slayer, Angel, Buffyverse, Supernatural Wiki`}
+        />
       </Head>
       <div className="infoSection">
         <h2>Welcome to the</h2>
