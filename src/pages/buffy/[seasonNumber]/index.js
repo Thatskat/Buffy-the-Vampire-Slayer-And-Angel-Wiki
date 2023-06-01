@@ -9,6 +9,10 @@ const BuffyEpisodesBySeasonPage = ({ season }) => {
     <div className="grid episodesBySeason">
       <Head>
         <title>Season {season[0].seasonNumber} | Buffy the Vampire Slayer</title>
+        <meta
+          name="description"
+          description={`Buffy the Vampire Slayer is a beloved TV show that ran for seven seasons. This page provides a recap of season ${season[0].seasonNumber} of Buffy the Vampire Slayer`}
+        />
       </Head>
       <div className="pageHeading">
         <Link href="/buffy">
