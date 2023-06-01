@@ -10,7 +10,7 @@ const index = () => {
         <title>Home | Buffy the Vampire Slayer + Angel Wiki</title>
         <meta
           name="description"
-          content={`"Buffy the Vampire Slayer" and "Angel" are two popular TV shows from the late 90s and early 2000s that featured demons, vampires, and supernatural elements. Learn more about the shows, their storylines, and the actors who brought them to life.`}
+          content={`"iscover the captivating worlds of Buffy the Vampire Slayer and Angel in our comprehensive wiki. Delve into the supernatural adventures, complex characters, and rich mythology of these iconic TV series. Uncover in-depth character profiles, episode summaries, and explore the interconnected universe of Slayers, vampires, demons, and more. Join the ultimate resource for fans, scholars, and casual viewers alike, and immerse yourself in the thrilling worlds of Buffy and Angel!`}
         />
       </Head>
       <div className="infoSection">
