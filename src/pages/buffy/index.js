@@ -12,6 +12,10 @@ const buffyOverviewPage = ({ buffyEpisodes }) => {
         <title>
           Buffy the Vampire Slayer | Buffy the Vampire Slayer + Angel Wiki
         </title>
+        <meta
+          name="description"
+          description={`Buffy the Vampire Slayer is a cult classic and beloved television series with seven seasons and 144 episodes. Dive into the world of Buffy and her friends with this guide to the show's seasons, key episodes, and essential viewing.`}
+        />
       </Head>
       <div className="grid">
         <div className="pageInfo">
