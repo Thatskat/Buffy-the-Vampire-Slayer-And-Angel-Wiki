@@ -2,13 +2,21 @@ import styles from "./Footer.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 
-import { AiOutlineInstagram, AiOutlineTwitter, AiOutlineFacebook } from "react-icons/ai";
+import {
+  AiOutlineInstagram,
+  AiOutlineTwitter,
+  AiOutlineFacebook,
+} from "react-icons/ai";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.socialMedia}>
-        <Link href="https://www.instagram.com/" target="_blank" title="Instagram">
+        <Link
+          href="https://www.instagram.com/"
+          target="_blank"
+          title="Instagram"
+        >
           <AiOutlineInstagram />
         </Link>
         <Link href="https://twitter.com/" target="_blank" title="Twitter">
@@ -21,31 +29,31 @@ const Footer = () => {
       <div className={styles.footerLinks}>
         <ul>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/" title="Home">Home</Link>
           </li>
           <li>
-            <Link href="/buffy">Buffy the Vampire Slayer</Link>
+            <Link href="/buffy" title="Buffy the Vampire Slayer">Buffy the Vampire Slayer</Link>
           </li>
           <li>
-            <Link href="/angel">Angel</Link>
+            <Link href="/angel" title="Angel">Angel</Link>
           </li>
           <li>
-            <Link href="/crew">Crew Profiles</Link>
+            <Link href="/crew" title="Crew Profiles">Crew Profiles</Link>
           </li>
-          <ul>
+        </ul>
+        <ul>
           <li>
-            <Link href="/privacypolicy">Privacy Policy</Link>
-          </li>
-          <li>
-            <Link href="/terms">Terms of Use</Link>
+            <Link href="/privacypolicy" title="Privacy Policy">Privacy Policy</Link>
           </li>
           <li>
-            <Link href="/about">About</Link>
+            <Link href="/terms" title="Terms of Use">Terms of Use</Link>
           </li>
           <li>
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/about" title="About Us">About</Link>
           </li>
-          </ul>
+          <li>
+            <Link href="/contact" title="Contact US">Contact Us</Link>
+          </li>
         </ul>
       </div>
       <div>
@@ -58,7 +66,9 @@ const Footer = () => {
           />
         </Link>
       </div>
-      <p className={styles.copyRight}>Buffy the Vampire Slayer + Angel Wiki &copy; 2023</p>
+      <p className={styles.copyRight}>
+        Buffy the Vampire Slayer + Angel Wiki &copy; 2023
+      </p>
     </footer>
   );
 };
