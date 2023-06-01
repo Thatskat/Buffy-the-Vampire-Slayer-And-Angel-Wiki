@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <div className={styles.logo}>
-        <Link href="/">
+        <Link href="/" title="Home">
           <Image
             src={"/test/logo.svg"}
             height={50}

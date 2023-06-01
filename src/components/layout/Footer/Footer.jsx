@@ -52,12 +52,12 @@ const Footer = () => {
             <Link href="/about" title="About Us">About</Link>
           </li>
           <li>
-            <Link href="/contact" title="Contact US">Contact Us</Link>
+            <Link href="/contact" title="Contact Us">Contact Us</Link>
           </li>
         </ul>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/" title="Home">
           <Image
             src="/test/logo.svg"
             width={50}
