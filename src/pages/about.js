@@ -5,6 +5,10 @@ const AboutPage = () => {
     <div className="grid privacyPolicy">
       <Head>
         <title>About Us | Buffy the Vampire Slayer + Angel Wiki</title>
+        <meta
+          name="description"
+          content={`Looking for information about Buffy the Vampire Slayer and Angel TV shows? Our wiki provides a comprehensive overview of the characters, plot lines, and behind-the-scenes trivia of these beloved classic shows.`}
+        />
       </Head>
       <div className="infoSection">
         <h1>

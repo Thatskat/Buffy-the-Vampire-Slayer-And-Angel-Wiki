@@ -9,7 +9,7 @@ const ActorPage = ({ actor }) => {
     <div className="grid profilePage">
       <Head>
         <title>{actor.name} | Buffy the Vampire Slayer + Angel Wiki</title>
-        <meta name="description" description={actor.name} />
+        <meta name="description" content={actor.name} />
       </Head>
       <div className="generalInfo">
         <Link href={"/crew/actors"}>

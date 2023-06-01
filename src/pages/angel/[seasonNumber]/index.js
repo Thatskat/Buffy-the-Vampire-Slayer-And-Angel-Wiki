@@ -11,7 +11,7 @@ const AngelEpisodesBySeasonPage = ({ season }) => {
         <title>Season {season[0].seasonNumber} | Angel</title>
         <meta
           name="description"
-          description={`Angel is a supernatural TV show that follows the life of a vampire and his associates as they fight evil forces. Learn everything you need to know about season ${season[0].seasonNumber} of this show.`}
+          content={`Angel is a supernatural TV show that follows the life of a vampire and his associates as they fight evil forces. Learn everything you need to know about season ${season[0].seasonNumber} of this show.`}
         />
       </Head>
       <div className="pageHeading">

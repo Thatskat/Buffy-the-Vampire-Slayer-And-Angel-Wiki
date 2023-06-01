@@ -8,7 +8,7 @@ const DirectorPage = ({ director }) => {
   return (<div className="grid profilePage">
       <Head>
         <title>{director.name} | Buffy the Vampire Slayer + Angel Wiki</title>
-        <meta name="description" description={director.name} />
+        <meta name="description" content={director.name} />
       </Head>
       <div className="generalInfo">
         <Link href={"/crew/directors"}>

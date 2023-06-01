@@ -8,6 +8,10 @@ const ActorInfoPage = ({ actors }) => {
     <div className="grid crewByCategory">
       <Head>
         <title>Actors | Buffy the Vampire Slayer + Angel Wiki</title>
+        <meta
+          name="description"
+          content={`Buffy the Vampire Slayer and its spin-off Angel featured a talented cast of actors who brought the beloved characters to life. Learn more about the actors behind these iconic TV shows.`}
+        />
       </Head>
       <div className="titleSection">
       <Link href={'/crew'}>Crew Overview</Link>

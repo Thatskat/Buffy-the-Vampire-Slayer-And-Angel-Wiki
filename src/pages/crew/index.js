@@ -58,6 +58,10 @@ const CrewPage = ({ actors, writers, directors }) => {
     <div className="grid crewPage">
       <Head>
         <title>Crew Profiles | Buffy the Vampire Slayer + Angel Wiki</title>
+        <meta
+          name="description"
+          content={`Get to know the characters of Buffy the Vampire Slayer and Angel with detailed crew profiles. Learn about their backgrounds, motivations, and how they fit into the action-packed world of these popular TV shows.`}
+        />
       </Head>
       <div className="titleSection">
         <h1>

@@ -7,6 +7,10 @@ const WriterInfoPage = ({ writers }) => {
     <div className="grid crewByCategory">
       <Head>
         <title>Writers | Buffy the Vampire Slayer + Angel Wiki</title>
+        <meta
+          name="description"
+          content={`Explore the diverse world of writers and creators behind the iconic TV shows Buffy the Vampire Slayer and Angel, and discover the storytelling techniques and inspiration behind their work.`}
+        />
       </Head>
       <div className="titleSection">
         <Link href={"/crew"}>Crew Overview</Link>

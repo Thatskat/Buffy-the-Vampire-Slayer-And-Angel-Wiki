@@ -1,15 +1,16 @@
 import Link from "next/link";
 import Head from "next/head";
 
-import {
-  AiFillPhone,
-  AiOutlineMail,
-} from "react-icons/ai";
+import { AiFillPhone, AiOutlineMail } from "react-icons/ai";
 const ContactPage = () => {
   return (
     <div className="grid privacyPolicy">
       <Head>
         <title>Contact Us | Buffy the Vampire Slayer + Angel Wiki</title>
+        <meta
+          name="description"
+          content={`If you have any questions, concerns, or feedback about the Buffy the Vampire Slayer and Angel Wiki, please don't hesitate to contact us. Our team is always happy to hear from our users.`}
+        />
       </Head>
       <div className="infoSection">
         <h1>
@@ -18,8 +19,8 @@ const ContactPage = () => {
         <p className="subText">
           Thank you for visiting the Buffy the Vampire Slayer and Angel Wiki! We
           value your feedback, suggestions, and inquiries. If you have any
-          questions or need assistance, please don&apos;t hesitate to contact us.
-          Here&apos;s how you can get in touch:
+          questions or need assistance, please don&apos;t hesitate to contact
+          us. Here&apos;s how you can get in touch:
         </p>
         <p className="contactLinks">
           {" "}

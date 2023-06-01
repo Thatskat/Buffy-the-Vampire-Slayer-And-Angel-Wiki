@@ -13,7 +13,7 @@ const AngelEpisodesPage = ({ episode }) => {
         <title>{episode.episodeName} | Angel</title>
         <meta
           name="description"
-          description={`Angel ${episode.seasonNumber} episode ${episode.episodeNumber}`}
+          content={`Angel ${episode.seasonNumber} episode ${episode.episodeNumber}`}
         />
       </Head>
       <div className="headingSection">

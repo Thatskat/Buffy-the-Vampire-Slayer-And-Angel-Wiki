@@ -9,7 +9,7 @@ const WriterPage = ({writer}) => {
     <div className="grid profilePage">
       <Head>
         <title>{writer.name} | Buffy the Vampire Slayer + Angel Wiki</title>
-        <meta name="description" description={writer.name} />
+        <meta name="description" content={writer.name} />
       </Head>
       <div className="generalInfo">
         <Link href={"/crew/writers"}>

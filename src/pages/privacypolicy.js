@@ -11,6 +11,10 @@ const PrivacyPolicyPage = () => {
     <div className="grid privacyPolicy">
       <Head>
         <title>Privacy Policy | Buffy the Vampire Slayer + Angel Wiki</title>
+        <meta
+          name="description"
+          content={`The Buffy the Vampire Slayer and Angel Wiki's privacy policy outlines how we collect, use, and safeguard your personal information. Keep browsing with confidence knowing that your privacy is our top priority.`}
+        />
       </Head>
       <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
         Policy Updates This Policy may change from time to time and is available
@@ -44,7 +48,7 @@ const PrivacyPolicyPage = () => {
         <p>
           A copy of the Australian Privacy Principles may be obtained from the
           website of The Office of the Australian Information Commissioner at{" "}
-          <Link href="https://www.oaic.gov.au/" target="_blank">
+          <Link href="https://www.oaic.gov.au/" target="_blank" title="OAIC Website">
             www.oaic.gov.au
           </Link>
           .

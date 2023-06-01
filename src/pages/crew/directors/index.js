@@ -7,6 +7,10 @@ const DirectorInfoPage = ({ directors }) => {
     <div className="grid crewByCategory">
       <Head>
         <title>Directors | Buffy the Vampire Slayer + Angel Wiki</title>
+        <meta
+          name="description"
+          content={`Buffy the Vampire Slayer and its spin-off, Angel, were groundbreaking television shows that pushed the boundaries of the genre and set the standard for future TV series. Learn more about the directors and their vision behind these iconic shows.`}
+        />
       </Head>
       <div className="titleSection">
         <Link href={"/crew"}>Crew Overview</Link>
