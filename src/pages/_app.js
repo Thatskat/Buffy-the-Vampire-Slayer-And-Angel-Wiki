@@ -35,7 +35,9 @@ export default function App({ Component, pageProps }) {
   }, [router.events]);
   return (
     <ThemeProvider>
-      <Script
+      <Head>
+        <link rel="shortcut icon" href="/test/logo.svg" type="image/x-icon" />
+        <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
         strategy="afterInteractive"
       />
@@ -48,8 +50,6 @@ export default function App({ Component, pageProps }) {
           gtag('config', '${process.env.GA_ID}');
         `}
       </Script>
-      <Head>
-        <link rel="shortcut icon" href="/test/logo.svg" type="image/x-icon" />
       </Head>
       <AnimatePresence
         mode="wait"
