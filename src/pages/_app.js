@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
       >
         <div className={`${karla.className} ${theme}`}>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
             strategy="afterInteractive"
           />
           <Script id="googleAnalyticsScript" strategy="afterInteractive">
@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }) {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-          gtag('config', '${process.env.GA_ID}');
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
         `}
           </Script>
           <Navbar />
