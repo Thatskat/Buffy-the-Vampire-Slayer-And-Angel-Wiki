@@ -44,19 +44,19 @@ export default function App({ Component, pageProps }) {
         onExitComplete={() => window.scrollTo(0, 0)}
       >
         <div className={`${karla.className} ${theme}`}>
-        <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="googleAnalyticsScript" strategy="afterInteractive">
-        {`
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
+            strategy="afterInteractive"
+          />
+          <Script id="googleAnalyticsScript" strategy="afterInteractive">
+            {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
           gtag('config', '${process.env.GA_ID}');
         `}
-      </Script>
+          </Script>
           <Navbar />
           <Component {...pageProps} />
           <Footer />
