@@ -37,6 +37,13 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider>
       <Head>
         <link rel="shortcut icon" href="/test/logo.svg" type="image/x-icon" />
+      </Head>
+      <AnimatePresence
+        mode="wait"
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <div className={`${karla.className} ${theme}`}>
         <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}`}
         strategy="afterInteractive"
@@ -50,13 +57,6 @@ export default function App({ Component, pageProps }) {
           gtag('config', '${process.env.GA_ID}');
         `}
       </Script>
-      </Head>
-      <AnimatePresence
-        mode="wait"
-        initial={false}
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <div className={`${karla.className} ${theme}`}>
           <Navbar />
           <Component {...pageProps} />
           <Footer />
