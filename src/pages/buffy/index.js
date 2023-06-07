@@ -94,7 +94,7 @@ const buffyOverviewPage = ({ buffyEpisodes }) => {
 };
 
 export async function getStaticProps() {
-  const response = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/buffy/season/7/1");
+  const response = await fetch("https://buffy-angel-api.up.railway.app/api/buffy/season/7/1");
   const buffyEpisodes = await response.json();
 
   return {

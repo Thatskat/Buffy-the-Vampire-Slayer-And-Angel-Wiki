@@ -48,7 +48,7 @@ const WriterPage = ({writer}) => {
 
 
 export const getStaticPaths = async () => {
-    const response = await fetch(`https://btvs-angel-api-production-3a72.up.railway.app/api/writers`);
+    const response = await fetch(`https://buffy-angel-api.up.railway.app/api/writers`);
     const writers = await response.json();
     const idList = writers.map((writer) => writer._id);
     const paths = idList.map((id) => ({ params: { writerId: id.toString() } }));
@@ -60,7 +60,7 @@ export const getStaticPaths = async () => {
   };
   
   export const getStaticProps = async (context) => {
-    const response = await fetch(`https://btvs-angel-api-production-3a72.up.railway.app/api/writers`);
+    const response = await fetch(`https://buffy-angel-api.up.railway.app/api/writers`);
     const writers = await response.json();
     const writersQuery = context.params.writerId;
     const writersIdMatch = writers.filter((writer)=> writer._id.toString() === writersQuery)

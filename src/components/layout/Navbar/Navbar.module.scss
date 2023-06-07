@@ -1,35 +1,46 @@
-@use '@/styles/scss/abstracts/index' as *;
+@use "@/styles/scss/abstracts/index" as *;
 
-    .navbar {
-        background: $primaryLight;
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 30px;
-        border-bottom: darken($primaryLight, 10%) 1px solid;
-        .logo {
-            // padding: 1rem 0rem 1rem ;
-            justify-self: start;
+.navbar {
+    background: $primaryLight;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-bottom: darken($primaryLight, 10%) 1px solid;
+    .logo {
+        justify-self: start;
+        transition: 1.5s all ease-in-out;
+        &:hover {
+            transform: scale(1.03);
         }
-        .navLinks {
-            ul {
-                list-style: none;
-                display: flex;
-                justify-content: space-around;
-                li {
-                    flex-direction: row;
-                    padding: 1rem 20px;
-                    a {
-                      color: $textLight; 
-                      text-decoration: none; 
+    }
+    .navLinks {
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            li {
+                flex-direction: row;
+                padding: 1rem 30px;
+                &:last-child {
+                    padding-right: 20px;
+                }
+                a {
+                    color: $textLight;
+                    font-weight: 300;
+                    font-size: 1.1rem;
+                    text-decoration: none;
+                    transition: all 0.5s ease-in-out;
+                    &:hover {
+                        transform: scale(1.1);
+                        color: darken($textLight, 10%);
                     }
                 }
             }
         }
-        .themeToggle {
-            button {
-                font-size: 2rem;
-            }
-    
+    }
+    .themeToggle {
+        button {
+            font-size: 2rem;
         }
     }
-
+}

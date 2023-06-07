@@ -13,8 +13,9 @@ import useTheme from "@/hooks/useTheme";
 
 import * as ga from "../lib/googleAnalytics";
 
-import Navbar from "@/components/layout/Navbar/Navbar";
-import Footer from "@/components/layout/Footer/Footer";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import Layout from "@/components/layout";
 
 const karla = Karla({
   weight: ["300", "400", "500", "700"],
@@ -38,30 +39,32 @@ export default function App({ Component, pageProps }) {
       <Head>
         <link rel="shortcut icon" href="/test/logo.svg" type="image/x-icon" />
       </Head>
-      <AnimatePresence
-        mode="wait"
-        initial={false}
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
-        <div className={`${karla.className} ${theme}`}>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="googleAnalyticsScript" strategy="afterInteractive">
-            {`
+      <div className={`${karla.className} ${theme}`}>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="googleAnalyticsScript" strategy="afterInteractive">
+          {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
           gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
         `}
-          </Script>
-          <Navbar />
-          <Component {...pageProps} />
-          <Footer />
-        </div>
-      </AnimatePresence>
+        </Script>
+        <Navbar />
+        <AnimatePresence
+          mode="wait"
+          initial={false}
+          onExitComplete={() => window.scrollTo(0, 0)}
+        >
+          <Layout>
+            <Component {...pageProps} key={router.asPath} />
+          </Layout>
+        </AnimatePresence>
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }

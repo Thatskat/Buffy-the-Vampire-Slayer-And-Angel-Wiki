@@ -176,9 +176,9 @@ const CrewPage = ({ actors, writers, directors }) => {
 };
 
 export async function getStaticProps() {
-  const aResponse = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/actors");
-  const wResponse = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/writers");
-  const dReponse = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/directors");
+  const aResponse = await fetch("https://buffy-angel-api.up.railway.app/api/actors");
+  const wResponse = await fetch("https://buffy-angel-api.up.railway.app/api/writers");
+  const dReponse = await fetch("https://buffy-angel-api.up.railway.app/api/directors");
   const actors = await aResponse.json();
   const writers = await wResponse.json();
   const directors = await dReponse.json();

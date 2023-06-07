@@ -38,7 +38,7 @@ const ActorInfoPage = ({ actors }) => {
 };
 
 export async function getStaticProps() {
-  const response = await fetch("https://btvs-angel-api-production-3a72.up.railway.app/api/actors");
+  const response = await fetch("https://buffy-angel-api.up.railway.app/api/actors");
   const actors = await response.json();
 
   return {

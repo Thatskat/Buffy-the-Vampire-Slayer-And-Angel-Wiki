@@ -39,6 +39,12 @@
             }
         }
     }
+    img {
+        transition: 1.5s all ease-in-out;
+        &:hover {
+            transform: scale(1.06);
+        }
+    }
     .copyRight {
         font-size: 0.7rem;
         color: lighten($textLight, 30%);
