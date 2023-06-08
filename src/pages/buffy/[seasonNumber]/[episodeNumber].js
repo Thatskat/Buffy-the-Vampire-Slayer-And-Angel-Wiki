@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import Profile from "@/components/features/Profile/Profile";
 
-import { FaImdb, FaArrowLeft } from "react-icons/fa";
+import { FaImdb } from "react-icons/fa";
 
 const BuffyEpisodesPage = ({ episode }) => {
   return (
@@ -18,9 +18,6 @@ const BuffyEpisodesPage = ({ episode }) => {
       </Head>
       <div className="headingSection">
         <Link href={`/buffy/${episode.seasonNumber}`}>
-          <span>
-            <FaArrowLeft />
-          </span>
           Return to all season {episode.seasonNumber} episodes
         </Link>
 
@@ -42,13 +39,15 @@ const BuffyEpisodesPage = ({ episode }) => {
             Season {episode.seasonNumber} Episode {episode.episodeNumber}
           </p>
           <p className="subText">Episode aired {episode.airDate}</p>
-          <h3>Plot          <Link
+          <Link
             href={episode.imdbLink}
             target="_blank"
             title={`${episode.episodeName} IMDB Page`}
+            className="imdbLink"
           >
             <FaImdb />
-          </Link></h3>
+          </Link>
+          <h3>Plot</h3>
           <p>{episode.description}</p>
           <h3>Behind the Scenes</h3>
           <p>{episode.trivia}</p>
@@ -85,7 +84,9 @@ const BuffyEpisodesPage = ({ episode }) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`https://buffy-angel-api.up.railway.app/api/buffy`);
+  const response = await fetch(
+    `https://buffy-angel-api.up.railway.app/api/buffy`
+  );
   const episodes = await response.json();
 
   const paths = await episodes.map((episode) => ({

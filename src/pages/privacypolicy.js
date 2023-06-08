@@ -4,6 +4,14 @@ import Head from "next/head";
 
 import Modal from "react-modal";
 import { FiMoreVertical } from "react-icons/fi";
+import { AiFillPhone, AiOutlineMail, AiFillHome, AiOutlineClose } from "react-icons/ai";
+
+import { Karla } from "next/font/google";
+const karla = Karla({
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
 
 const PrivacyPolicyPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,12 +24,41 @@ const PrivacyPolicyPage = () => {
           content={`The Buffy the Vampire Slayer and Angel Wiki's privacy policy outlines how we collect, use, and safeguard your personal information. Keep browsing with confidence knowing that your privacy is our top priority.`}
         />
       </Head>
-      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-        Policy Updates This Policy may change from time to time and is available
-        on our website. Privacy Policy Complaints and Enquiries If you have any
-        queries or complaints about our Privacy Policy please contact us at:
-        [Your business address] [Your business email address] [Your business
-        phone number]
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+        className={`${karla.className} ReactModal__Content ReactModal__Overlay--after-open`}
+      >
+        <button onClick={() => setIsOpen(false)}><AiOutlineClose /></button>
+        <h3>Policy Updates</h3>
+        <p>
+          This Policy may change from time to time and is available on our
+          website.
+        </p>
+        <p>
+          Privacy Policy Complaints and Enquiries If you have any queries or
+          complaints about our Privacy Policy please contact us at:
+        </p>
+        <ul>
+          <li>
+            <AiFillHome />
+            1630 Revello Drive, Moe 3825
+          </li>
+          <li>
+            <Link
+              href={"mailto: inquiries@buffyangelwiki.com.au"}
+              target={true}
+            >
+              <AiOutlineMail /> inquiries@buffyangelwiki.com.au
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link href="tel: 1300 655 506">
+              <AiFillPhone /> 1300 655 506
+            </Link>
+          </li>
+        </ul>
       </Modal>
       <div className="infoSection">
         <h1>
@@ -48,7 +85,11 @@ const PrivacyPolicyPage = () => {
         <p>
           A copy of the Australian Privacy Principles may be obtained from the
           website of The Office of the Australian Information Commissioner at{" "}
-          <Link href="https://www.oaic.gov.au/" target="_blank" title="OAIC Website">
+          <Link
+            href="https://www.oaic.gov.au/"
+            target="_blank"
+            title="OAIC Website"
+          >
             www.oaic.gov.au
           </Link>
           .
@@ -84,8 +125,8 @@ const PrivacyPolicyPage = () => {
         <h3>Sensitive Information</h3>
         <p>
           Sensitive information is defined in the Privacy Act to include
-          information or opinion about such things as an individual&apos;s racial or
-          ethnic origin, political opinions, membership of a political
+          information or opinion about such things as an individual&apos;s
+          racial or ethnic origin, political opinions, membership of a political
           association, religious or philosophical beliefs, membership of a trade
           union or other professional body, criminal record or health
           information.

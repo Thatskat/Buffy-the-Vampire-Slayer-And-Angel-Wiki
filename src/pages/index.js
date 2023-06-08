@@ -1,9 +1,23 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import Head from "next/head";
-import { motion } from "framer-motion";
 
-const index = () => {
+const HomePage = () => {
+  const handleMouseEnter = (e) => {
+    const video = e.target;
+    video.muted = true;
+    video.play();
+    video.style.opacity = 1
+  };
+
+  const handleMouseLeave = (e) => {
+    const video = e.target;
+    video.muted = false;
+    video.currentTime = 0;
+    video.load();
+    video.pause();
+  };
+
   return (
     <div className="grid">
       <Head>
@@ -38,20 +52,34 @@ const index = () => {
           collide—the Buffyverse awaits you.
         </p>
       </div>
-      <div className="highlights">
-        <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <div className="angelHighlight">
-            {/* <Image
-              src="/test/angel-placeholder.webp"
-              alt="Angel Screenshot"
-              fill={true}
-              loading="lazy"
-            /> */}
-          </div>
-        </motion.div>
+      <div className="highlights videoGrid">
+          <Link href={"/buffy"} title="Buffy the Vampire Slayer">
+            <video
+              width="90%"
+              muted
+              loop
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              poster="/image/buffy-image-for-hover.webp"
+            >
+              <source src="/video/buffy-hover.webm" type="video/webm" />
+            </video>
+          </Link>
+          <Link href={"/angel"} title="Angel">
+            <video
+              width="90%"
+              muted
+              loop
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              poster="/image/angel-image-for-hover.webp"
+            >
+              <source src="/video/angel-hover.webm" type="video/webm" />
+            </video>
+          </Link>
       </div>
     </div>
   );
 };
 
-export default index;
+export default HomePage;

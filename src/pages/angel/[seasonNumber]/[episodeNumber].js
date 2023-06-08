@@ -39,15 +39,16 @@ const AngelEpisodesPage = ({ episode }) => {
             Season {episode.seasonNumber} Episode {episode.episodeNumber}
           </p>
           <p className="subText">Episode aired {episode.airDate}</p>
-          <h3>
-            Plot
-            <Link
+          <Link
               href={episode.imdbLink}
               target="_blank"
               title={`${episode.episodeName} IMDB Page`}
+              className="imdbLink"
             >
               <FaImdb />
             </Link>
+          <h3>
+            Plot
           </h3>
           <p>{episode.description}</p>
           <h3>Behind the Scenes</h3>

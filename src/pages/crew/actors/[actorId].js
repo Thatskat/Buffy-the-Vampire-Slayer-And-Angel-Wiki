@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { FaImdb, FaArrowLeft } from "react-icons/fa";
+import { FaImdb } from "react-icons/fa";
 
 const ActorPage = ({ actor }) => {
   return (
@@ -12,12 +12,7 @@ const ActorPage = ({ actor }) => {
         <meta name="description" content={actor.name} />
       </Head>
       <div className="generalInfo">
-        <Link href={"/crew/actors"}>
-          <span>
-            <FaArrowLeft />
-          </span>
-          Back to Actors Page
-        </Link>
+        <Link href={"/crew/actors"}>Back to Actors Page</Link>
         <div className="image">
           <Image
             src={actor.profilePicture}
@@ -31,15 +26,19 @@ const ActorPage = ({ actor }) => {
         <h1>{actor.name}</h1>
         <p className="subText">
           {actor.characterPlayed.map((character, index) => (
-            <div className="characters" key={index}>{character}</div>
+            <div className="characters" key={index}>
+              {character}
+            </div>
           ))}
         </p>
-        <h3>
-          Bio{" "}
-          <Link href={actor.imdbProfile} target="_blank">
-            <FaImdb />
-          </Link>
-        </h3>
+        <h3>Bio </h3>
+        <Link
+          href={actor.imdbProfile}
+          target="_blank"
+          title={`${actor.name}'s IMDb Profile`}
+        >
+          <FaImdb />
+        </Link>
         <p>{actor.bio}</p>
       </div>
     </div>
@@ -47,7 +46,9 @@ const ActorPage = ({ actor }) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`https://buffy-angel-api.up.railway.app/api/actors`);
+  const response = await fetch(
+    `https://buffy-angel-api.up.railway.app/api/actors`
+  );
   const actors = await response.json();
   const idList = actors.map((actor) => actor._id);
   const paths = idList.map((id) => ({ params: { actorId: id.toString() } }));
@@ -59,7 +60,9 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const response = await fetch(`https://buffy-angel-api.up.railway.app/api/actors`);
+  const response = await fetch(
+    `https://buffy-angel-api.up.railway.app/api/actors`
+  );
   const actors = await response.json();
   const actorQuery = context.params.actorId;
   const actorIdMatch = actors.filter(

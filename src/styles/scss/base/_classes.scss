@@ -12,3 +12,8 @@
 .bold {
     font-weight: 500;
 }
+.videoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1rem; 
+}

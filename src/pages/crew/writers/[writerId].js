@@ -2,9 +2,9 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
-import { FaImdb, FaArrowLeft } from "react-icons/fa";
+import { FaImdb } from "react-icons/fa";
 
-const WriterPage = ({writer}) => {
+const WriterPage = ({ writer }) => {
   return (
     <div className="grid profilePage">
       <Head>
@@ -12,12 +12,7 @@ const WriterPage = ({writer}) => {
         <meta name="description" content={writer.name} />
       </Head>
       <div className="generalInfo">
-        <Link href={"/crew/writers"}>
-          <span>
-            <FaArrowLeft />
-          </span>
-          Back to Writers Page
-        </Link>
+        <Link href={"/crew/writers"}>Back to Writers Page</Link>
         <div className="image">
           <Image
             src={writer.profilePicture}
@@ -31,44 +26,53 @@ const WriterPage = ({writer}) => {
         <h1>{writer.name}</h1>
         <p className="subText">
           {writer?.characterPlayed.map((character, index) => (
-            <div className="characters" key={index}>{character}</div>
+            <div className="characters" key={index}>
+              {character}
+            </div>
           ))}
         </p>
-        <h3>
-          Bio{" "}
-          <Link href={writer.imdbProfile} target="_blank">
-            <FaImdb />
-          </Link>
-        </h3>
+        <h3>Bio </h3>
+        <Link
+          href={writer.imdbProfile}
+          target="_blank"
+          title={`${writer.name}'s IMDb Profile`}
+        >
+          <FaImdb />
+        </Link>
         <p>{writer.bio}</p>
       </div>
     </div>
   );
 };
 
-
 export const getStaticPaths = async () => {
-    const response = await fetch(`https://buffy-angel-api.up.railway.app/api/writers`);
-    const writers = await response.json();
-    const idList = writers.map((writer) => writer._id);
-    const paths = idList.map((id) => ({ params: { writerId: id.toString() } }));
-  
-    return {
-      paths,
-      fallback: false,
-    };
-  };
-  
-  export const getStaticProps = async (context) => {
-    const response = await fetch(`https://buffy-angel-api.up.railway.app/api/writers`);
-    const writers = await response.json();
-    const writersQuery = context.params.writerId;
-    const writersIdMatch = writers.filter((writer)=> writer._id.toString() === writersQuery)
-    return {
-      props: {
-        writer: writersIdMatch[0],
-      },
-    };
-  };
+  const response = await fetch(
+    `https://buffy-angel-api.up.railway.app/api/writers`
+  );
+  const writers = await response.json();
+  const idList = writers.map((writer) => writer._id);
+  const paths = idList.map((id) => ({ params: { writerId: id.toString() } }));
 
-export default WriterPage
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context) => {
+  const response = await fetch(
+    `https://buffy-angel-api.up.railway.app/api/writers`
+  );
+  const writers = await response.json();
+  const writersQuery = context.params.writerId;
+  const writersIdMatch = writers.filter(
+    (writer) => writer._id.toString() === writersQuery
+  );
+  return {
+    props: {
+      writer: writersIdMatch[0],
+    },
+  };
+};
+
+export default WriterPage;

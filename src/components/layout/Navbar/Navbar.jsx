@@ -1,15 +1,10 @@
 
 import styles from "./Navbar.module.scss";
-import { Kanit } from "next/font/google";
+
 
 import Link from "next/link";
 import Image from "next/image";
 
-const kanit = Kanit({
-  weight: ["300", "400", "500", "700"],
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-});
 
 const Navbar = () => {
   return (
@@ -24,7 +19,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      <nav className={`${styles.navLinks} ${kanit.className}`}>
+      <nav className={`${styles.navLinks}`}>
         <ul>
           <li>
             <Link href="/">Home</Link>

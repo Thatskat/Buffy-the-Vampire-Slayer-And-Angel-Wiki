@@ -2,7 +2,8 @@ import Link from "next/link";
 import Head from "next/head";
 
 import SeasonCards from "@/components/features/SeasonCards";
-import Profile from "@/components/features/Profile/Profile";
+import ProfileInfo from "@/components/features/ProfileInfo";
+import Profile from "@/components/features/Profile";
 import TitleSection from "@/components/layout/TitleSection";
 
 const buffyOverviewPage = ({ buffyEpisodes }) => {
@@ -49,19 +50,19 @@ const buffyOverviewPage = ({ buffyEpisodes }) => {
                 />
               ))}
               <h3>Starring</h3>
-              <div className="grid">
+              <div className="castGrid">
                 {buffyEpisodes.map((episode) =>
                   episode?.episodeCast.map(
                     (cast, index) =>
                       index < 6 && (
-                        <Profile key={cast._id} data={cast} typeLink="actors" />
+                        <ProfileInfo key={cast._id} data={cast} typeLink="actors" />
                       )
                   )
                 )}
               </div>
             </div>
             <div className="trailer">
-              <video width="95%" height="auto" controls autoPlay>
+              <video width="95%" height="auto" controls autoPlay loop>
                 <source src="/trailers/buffy-trailer.webm" type="video/webm" />
               </video>
               <p className="videoReference">
@@ -75,15 +76,16 @@ const buffyOverviewPage = ({ buffyEpisodes }) => {
                   Mutant Enemy Productions
                 </Link>
               </p>
+      
               <h3>Seasons</h3>
               <div className="seasonsGrid">
-                <SeasonCards show="buffy" season="1" />
-                <SeasonCards show="buffy" season="2" />
-                <SeasonCards show="buffy" season="3" />
-                <SeasonCards show="buffy" season="4" />
-                <SeasonCards show="buffy" season="5" />
-                <SeasonCards show="buffy" season="6" />
-                <SeasonCards show="buffy" season="7" />
+                <SeasonCards show="buffy" season="1" seasonDescription={`The first season of the American supernatural drama television series Buffy the Vampire Slayer originally aired between March 10 and June 2, 1997 on The WB.`}/>
+                <SeasonCards show="buffy" season="2" seasonDescription={`The second season of the television series Buffy the Vampire Slayer premiered on September 15, 1997, on The WB and concluded its 22-episode season on May 19, 1998.`}/>
+                <SeasonCards show="buffy" season="3" seasonDescription={`The third season of the television series Buffy the Vampire Slayer premiered on September 29, 1998 on The WB and episode 22, the second of the two part season finale, aired on July 13, 1999. However, episode 18 "Earshot" did not air until September 21, 1999, shortly before the season 4 premiere.`}/>
+                <SeasonCards show="buffy" season="4" seasonDescription={`The fourth season of the television series Buffy the Vampire Slayer premiered on October 5, 1999, on The WB and concluded its 22-episode season on May 23, 2000. It maintained its previous timeslot, airing Tuesdays at 8:00 pm ET. `}/>
+                <SeasonCards show="buffy" season="5" seasonDescription={`The fifth season of the television series Buffy the Vampire Slayer premiered on September 26, 2000 on The WB and concluded its 22-episode season on May 22, 2001. It maintained its previous timeslot, airing Tuesdays at 8:00 pm ET.`}/>
+                <SeasonCards show="buffy" season="6" seasonDescription={`The sixth season of the television series Buffy the Vampire Slayer premiered on October 2, 2001, with a two-hour premiere on UPN and concluded its 22-episode season with a two-hour finale on May 21, 2002. It maintained its previous timeslot, airing Tuesdays at 8:00 pm ET.`} />
+                <SeasonCards show="buffy" season="7" seasonDescription={`The seventh and final season of the television series Buffy the Vampire Slayer premiered on September 24, 2002 on UPN and concluded its 22-episode run on May 20, 2003. It maintained its previous timeslot, airing Tuesdays at 8:00 pm ET.`}/>
               </div>
             </div>
           </div>

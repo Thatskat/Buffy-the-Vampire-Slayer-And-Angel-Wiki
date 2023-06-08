@@ -7,7 +7,7 @@
   
 
     a {
-        text-transform: capitalize;
+ 
         display: grid;
         grid-template-columns: repeat(2, 0fr);
         text-decoration: none;
@@ -22,7 +22,6 @@
             .title {
                 text-decoration: underline;
             }
-        
             background-color: darken($primaryLight, 2%);
         }
 
@@ -46,6 +45,9 @@
                
               color: $textLight;
 
+            }
+            .smallText {
+                margin: -1rem 0rem;
             }
         }
     }

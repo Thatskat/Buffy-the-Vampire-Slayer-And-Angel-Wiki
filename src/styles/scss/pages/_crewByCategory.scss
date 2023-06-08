@@ -10,6 +10,15 @@
                 color: $brand;
             }
         }
+        a {
+            color: $brand;
+            text-decoration: none;
+            transition: all 0.5s ease-in-out; 
+            &:hover {
+                text-decoration: underline;
+                color: $brandSecondary;
+            }
+        }
     }
     .profiles {
         background-color: $primaryLight;

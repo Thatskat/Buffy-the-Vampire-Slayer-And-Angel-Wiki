@@ -1,4 +1,4 @@
-@use '../abstracts/index' as *;
+@use "../abstracts/index" as *;
 
 .episodeInfoPage {
     padding: 1rem 20px;
@@ -23,18 +23,6 @@
                 font-size: 60px;
                 color: $brand;
             }
-            a {
-                margin: 0rem 0.5rem;
-                font-size: larger;
-                svg {
-                    padding-top: 0.9rem;
-                    color: $brand;
-                    transition: all 0.5s ease-in-out;
-                    &:hover {
-                        color: $brandSecondary;
-                    }
-                }
-            }
         }
         .image {
             position: relative;
@@ -48,9 +36,19 @@
             }
         }
     }
-    .episodeInformation{
+    .episodeInformation {
         width: 65vw;
         text-transform: capitalize;
+        .imdbLink {
+            font-size: 2rem;
+            svg {
+                color: $brand;
+                transition: 0.5s ease-in-out all;
+                &:hover {
+                    color: $brandSecondary;
+                }
+            }
+        }
         .overview {
             background-color: $primaryLight;
             border-radius: 10px;
@@ -70,6 +68,5 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-  
     }
 }

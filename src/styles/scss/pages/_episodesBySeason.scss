@@ -18,6 +18,7 @@
             transition: all 0.5s ease-in-out;
             &:hover {
                 color: $brandSecondary;
+                text-decoration: underline;
             }
         }
     }
@@ -34,6 +35,7 @@
 
             .cardInfo {
                 width: 50vw;
+                height: auto;
                 text-transform: capitalize;
                 padding: 1rem;
                 p{  
@@ -54,7 +56,7 @@
             }
             .nextImage {
                 position: relative;
-                height: 10rem;
+                height: auto;
                 width: 10vw;
                 overflow: hidden;
                 border-radius: 10px;

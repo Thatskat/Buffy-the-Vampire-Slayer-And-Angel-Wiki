@@ -14,6 +14,25 @@
         p {
             margin: 0.6rem 0rem;
         }
+        a {
+            color: $textLight;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        button {
+            background-color: $secondaryLight;
+            margin-left: 1rem;
+            svg {
+                color: $brand;
+                font-size: 2.5rem;
+                transition: all 0.5s ease-in-out;
+                &:hover {
+                    color: $brandSecondary;
+                }
+            }
+        }
     }
     .policySection {
         width: 60vw;
@@ -36,7 +55,6 @@
             }
         }
         ul {
-    
             list-style: disc !important;
         }
     }
@@ -55,4 +73,56 @@
             }
         }
     }
+}
+
+.ReactModal__Content {
+    z-index: 3;
+    background-color: $primaryLight;
+    width: 30rem;
+    margin: 7rem 20px;
+    padding: 2rem;
+    border: darken($primaryLight, 10%) 1px solid;
+    border-radius: 10px;
+    color: $textLight;
+    button {
+        border: none;
+        background-color: $primaryLight;
+        svg {
+            color: $brand;
+            font-size: 2rem;
+            transition: 0.5s ease-in-out all;
+            &:hover {
+                color: $brandSecondary;
+            }
+        }
+    }
+    h3 {
+        margin: 1rem 0rem;
+    }
+    p {
+        margin: 0.5rem 0rem;
+    }
+    ul {
+        list-style: none;
+        svg {
+            margin-right: 1rem;
+        }
+        li {
+            color: $brand;
+            transition: 0.5s all ease-in-out;
+            padding: 0.3rem 0rem;
+            a {
+                text-decoration: none;
+                color: $brand;
+                transition: 0.5s all ease-in-out;
+                &:hover {
+                    color: $brandSecondary;
+                }
+            }
+        }
+    }
+}
+button {
+    border: none;
+    background-color: none;
 }

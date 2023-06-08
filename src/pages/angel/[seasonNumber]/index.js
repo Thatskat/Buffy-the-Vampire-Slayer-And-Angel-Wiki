@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
-
 const AngelEpisodesBySeasonPage = ({ season }) => {
   return (
     <div className="grid episodesBySeason">
@@ -16,13 +14,13 @@ const AngelEpisodesBySeasonPage = ({ season }) => {
       </Head>
       <div className="pageHeading">
         <Link href="/angel">
-          <AiOutlineArrowLeft />
           Back to Angel Overview
         </Link>
         <h1>
           Angel <br></br>
           <span>+</span> <br></br> Season <span>{season[0].seasonNumber}</span>
         </h1>
+        <p className="subText">{season[0].seasonNumber === 1 ? `At the end of the third season of Buffy, the 242-year-old, re-ensouled vampire Angel left Sunnydale to give teenage Slayer Buffy Summers the chance to live a normal life. Angel is now living in the big city of Los Angeles. With Buffy gone Angel is now completely cut off from society, every day getting closer and closer to giving in to his vampiric hunger. It's not until he befriends the half demon and fellow Irishman Doyle, who is sent visions of people in trouble by The Powers That Be, and fellow Sunnydale resident Cordelia Chase, who grounds Angel's life in the humanity around him, that he truly begins to take charge of his life and seek atonement for his past sins. He sets up his own detective agency, Angel Investigations and begins to "help the helpless".` : season[0].seasonNumber === 2 ? `The second season of the television series "Angel," a spin-off of "Buffy the Vampire Slayer," delves deeper into the dark and supernatural world of its titular vampire protagonist. Picking up from the events of the first season, Angel (David Boreanaz) and his team of supernatural investigators face a myriad of challenges in the gritty city of Los Angeles. One of the central storylines of Season 2 revolves around the return of Darla (Julie Benz), Angel's sire and former lover, who has been resurrected as a human. This unexpected twist forces Angel to confront his complicated feelings for her while also grappling with the responsibility of guiding her through her newfound humanity.` : season[0].seasonNumber === 3  ? `The third season of the television series "Angel" takes viewers on a captivating journey through a dark and tumultuous Los Angeles. Following the events of the previous season, the titular vampire with a soul, Angel (David Boreanaz), faces new challenges that push him to his limits. In Season 3, the series delves into the ongoing battle between Angel and the law firm Wolfram & Hart, which represents the forces of evil. Angel forms an unlikely alliance with former adversaries Lilah Morgan (Stephanie Romanov) and Lindsey McDonald (Christian Kane) to infiltrate and disrupt the firm from within.`: season[0].seasonNumber === 4 ? `The fourth season of "Angel" takes a dramatic turn as the series undergoes a significant shift in narrative and tone. After a catastrophic event, the members of Angel Investigations find themselves in a new reality where they work for the powerful and manipulative law firm, Wolfram & Hart. This new dynamic brings moral complexities as Angel (David Boreanaz) and his team navigate the blurred lines between good and evil. The season explores themes of power, corruption, and redemption, with the characters facing personal struggles and confronting their darkest impulses. "Angel" Season 4 offers a dark and compelling exploration of the consequences of making compromises in the fight against evil.` : `The fifth and final season of "Angel" takes the series to new heights of intensity and complexity. As the team at Angel Investigations settles into their roles at Wolfram & Hart, they face the challenge of maintaining their principles while working within a morally ambiguous environment. The season introduces a mysterious new member, Spike (James Marsters), and delves into the prophetic visions of Fred (Amy Acker) and the enigmatic role of the ancient demon Illyria. With high stakes and unexpected twists, Season 5 delves into themes of destiny, sacrifice, and the nature of heroism. "Angel" Season 5 offers a thrilling and emotionally charged conclusion to the series, leaving fans captivated until the very end.` }</p>
       </div>
       <div className="episodeCards">
         {season &&
@@ -50,7 +48,7 @@ const AngelEpisodesBySeasonPage = ({ season }) => {
                   <Link
                     href={`/angel/${episodes.seasonNumber}/${episodes.episodeNumber}`}
                   >
-                    See more <AiOutlineArrowRight />
+                    See more
                   </Link>
                 </p>
               </div>

@@ -1,21 +1,22 @@
 @use "../abstracts/index" as *;
 
 .highlights {
-    width: 65vw;
-
-    .div{
-     
-        height: 0rem;
-        width: 10px !important; 
-        overflow: hidden;
-        .angelHighlight {
-            img {
-                object-fit: cover;
-                display: none;
-            }
+    width: 60vw;
+    padding-left: 30px;
+    margin-top: 6rem;
+    object-fit: cover;
+    video::-webkit-media-controls {
+        display: none !important;
+    }
+    video {
+        border-radius: 10px;
+        position: relative; 
+        transition: opacity 2s; 
+    
+        &:hover {
+            opacity: 0;             
         }
     }
-   
 }
 .infoSection {
     width: 35vw;

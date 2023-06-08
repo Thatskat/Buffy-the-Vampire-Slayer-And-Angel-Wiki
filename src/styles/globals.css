@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #fffbfb;
+  background-color: #fcfcfc;
 }
 
 h1 {
@@ -40,17 +40,28 @@ h5 {
   font-weight: 500;
 }
 
+.videoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.1rem;
+}
+
 .highlights {
-  width: 65vw;
-}
-.highlights .div {
-  height: 0rem;
-  width: 10px !important;
-  overflow: hidden;
-}
-.highlights .div .angelHighlight img {
+  width: 60vw;
+  padding-left: 30px;
+  margin-top: 6rem;
   object-fit: cover;
-  display: none;
+}
+.highlights video::-webkit-media-controls {
+  display: none !important;
+}
+.highlights video {
+  border-radius: 10px;
+  position: relative;
+  transition: opacity 2s;
+}
+.highlights video:hover {
+  opacity: 0;
 }
 
 .infoSection {
@@ -96,7 +107,8 @@ h5 {
 }
 .buffyInfoPage .pageInfo .castGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 0fr);
+  gap: 1rem;
 }
 .buffyInfoPage .pageInfo .trailer video {
   margin: 50px 10px 0px;
@@ -118,30 +130,37 @@ h5 {
   text-decoration: underline;
 }
 .buffyInfoPage .pageInfo .trailer h3 {
-  margin: 1.5rem 0rem;
+  margin: 2rem 0rem 1rem 0rem;
 }
 .buffyInfoPage .pageInfo .trailer .seasonsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  height: 68vh;
+  overflow-y: scroll;
 }
 .buffyInfoPage .pageInfo .trailer .seasonsGrid .seasonCard {
-  background-color: #1269c6;
+  background-color: #ffffff;
   border-radius: 10px;
-  width: 14vw;
+  width: 46.5vw;
   margin: 0.5rem 0rem;
   padding: 1rem;
-  text-align: center;
-  transition: all 0.7s ease-in-out;
-}
-.buffyInfoPage .pageInfo .trailer .seasonsGrid .seasonCard:hover {
-  background-color: #1b51ac;
+  transition: all 0.5s ease-in-out;
+  border: #e6e6e6 1px solid;
 }
 .buffyInfoPage .pageInfo .trailer .seasonsGrid .seasonCard a {
+  background-color: #fafafa;
   text-decoration: none;
+  transition: all 0.7s ease-in-out;
+}
+.buffyInfoPage .pageInfo .trailer .seasonsGrid .seasonCard a:hover h4 {
+  text-decoration: underline;
+  color: #1269c6;
 }
 .buffyInfoPage .pageInfo .trailer .seasonsGrid .seasonCard a h4 {
   text-decoration: none;
-  color: #ffffff;
+  color: #18181b;
+}
+.buffyInfoPage .pageInfo .trailer .seasonsGrid .seasonCard a p {
+  width: 100%;
+  color: #18181b;
 }
 .buffyInfoPage .colourSide {
   width: 2vw;
@@ -168,6 +187,7 @@ h5 {
 }
 .episodesBySeason .pageHeading a:hover {
   color: #1b51ac;
+  text-decoration: underline;
 }
 .episodesBySeason .episodeCards {
   width: 60vw;
@@ -183,6 +203,7 @@ h5 {
 }
 .episodesBySeason .episodeCards .episodeCard .cardInfo {
   width: 50vw;
+  height: auto;
   text-transform: capitalize;
   padding: 1rem;
 }
@@ -203,7 +224,7 @@ h5 {
 }
 .episodesBySeason .episodeCards .episodeCard .nextImage {
   position: relative;
-  height: 10rem;
+  height: auto;
   width: 10vw;
   overflow: hidden;
   border-radius: 10px;
@@ -236,18 +257,6 @@ h5 {
   font-size: 60px;
   color: #1269c6;
 }
-.episodeInfoPage .headingSection h2 a {
-  margin: 0rem 0.5rem;
-  font-size: larger;
-}
-.episodeInfoPage .headingSection h2 a svg {
-  padding-top: 0.9rem;
-  color: #1269c6;
-  transition: all 0.5s ease-in-out;
-}
-.episodeInfoPage .headingSection h2 a svg:hover {
-  color: #1b51ac;
-}
 .episodeInfoPage .headingSection .image {
   position: relative;
   width: 100%;
@@ -262,6 +271,16 @@ h5 {
 .episodeInfoPage .episodeInformation {
   width: 65vw;
   text-transform: capitalize;
+}
+.episodeInfoPage .episodeInformation .imdbLink {
+  font-size: 2rem;
+}
+.episodeInfoPage .episodeInformation .imdbLink svg {
+  color: #1269c6;
+  transition: 0.5s ease-in-out all;
+}
+.episodeInfoPage .episodeInformation .imdbLink svg:hover {
+  color: #1b51ac;
 }
 .episodeInfoPage .episodeInformation .overview {
   background-color: #ffffff;
@@ -347,6 +366,15 @@ h5 {
 .crewByCategory .titleSection h1 span {
   color: #1269c6;
 }
+.crewByCategory .titleSection a {
+  color: #1269c6;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+.crewByCategory .titleSection a:hover {
+  text-decoration: underline;
+  color: #1b51ac;
+}
 .crewByCategory .profiles {
   background-color: #ffffff;
   width: 65vw;
@@ -401,6 +429,16 @@ h5 {
   border-radius: 10px;
   border: #e6e6e6 1px solid;
 }
+.profilePage .bio a {
+  font-size: 2rem;
+}
+.profilePage .bio a svg {
+  color: #1269c6;
+  transition: 0.5s all ease-in-out;
+}
+.profilePage .bio a svg:hover {
+  color: #1b51ac;
+}
 .profilePage .bio .characters {
   margin: 0.5rem;
   display: inline;
@@ -410,18 +448,6 @@ h5 {
 }
 .profilePage .bio h3 {
   margin: 1.2rem 0rem 1rem;
-}
-.profilePage .bio h3 a {
-  margin-top: 2rem;
-  font-size: 2.5rem;
-}
-.profilePage .bio h3 a svg {
-  color: #1269c6;
-  padding-top: 0.6rem !important;
-  transition: 0.5s all ease-in-out;
-}
-.profilePage .bio h3 a svg:hover {
-  color: #1b51ac;
 }
 
 .privacyPolicy {
@@ -439,6 +465,25 @@ h5 {
 }
 .privacyPolicy .infoSection p {
   margin: 0.6rem 0rem;
+}
+.privacyPolicy .infoSection a {
+  color: #18181b;
+  text-decoration: none;
+}
+.privacyPolicy .infoSection a:hover {
+  text-decoration: underline;
+}
+.privacyPolicy .infoSection button {
+  background-color: #fcfcfc;
+  margin-left: 1rem;
+}
+.privacyPolicy .infoSection button svg {
+  color: #1269c6;
+  font-size: 2.5rem;
+  transition: all 0.5s ease-in-out;
+}
+.privacyPolicy .infoSection button svg:hover {
+  color: #1b51ac;
 }
 .privacyPolicy .policySection {
   width: 60vw;
@@ -476,4 +521,57 @@ h5 {
 }
 .privacyPolicy .contactLinks a svg {
   margin-right: 10px;
+}
+
+.ReactModal__Content {
+  z-index: 3;
+  background-color: #ffffff;
+  width: 30rem;
+  margin: 7rem 20px;
+  padding: 2rem;
+  border: #e6e6e6 1px solid;
+  border-radius: 10px;
+  color: #18181b;
+}
+.ReactModal__Content button {
+  border: none;
+  background-color: #ffffff;
+}
+.ReactModal__Content button svg {
+  color: #1269c6;
+  font-size: 2rem;
+  transition: 0.5s ease-in-out all;
+}
+.ReactModal__Content button svg:hover {
+  color: #1b51ac;
+}
+.ReactModal__Content h3 {
+  margin: 1rem 0rem;
+}
+.ReactModal__Content p {
+  margin: 0.5rem 0rem;
+}
+.ReactModal__Content ul {
+  list-style: none;
+}
+.ReactModal__Content ul svg {
+  margin-right: 1rem;
+}
+.ReactModal__Content ul li {
+  color: #1269c6;
+  transition: 0.5s all ease-in-out;
+  padding: 0.3rem 0rem;
+}
+.ReactModal__Content ul li a {
+  text-decoration: none;
+  color: #1269c6;
+  transition: 0.5s all ease-in-out;
+}
+.ReactModal__Content ul li a:hover {
+  color: #1b51ac;
+}
+
+button {
+  border: none;
+  background-color: none;
 }

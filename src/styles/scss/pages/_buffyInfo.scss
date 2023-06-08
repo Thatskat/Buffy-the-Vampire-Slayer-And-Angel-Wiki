@@ -27,7 +27,8 @@
         }
         .castGrid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 0fr);
+            gap: 1rem;
         }
         .trailer {
             video {
@@ -50,34 +51,41 @@
                 }
             }
             h3 {
-                margin: 1.5rem 0rem;
+                margin: 2rem 0rem 1rem 0rem;
             }
     
             .seasonsGrid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                height: 68vh;
+                overflow-y: scroll;
                 .seasonCard {
-                    background-color: $brand;
+                    background-color: $primaryLight;
                     border-radius: 10px;
-                    width: 14vw;
+                    width: 46.5vw;
                     margin: 0.5rem 0rem;
                     padding: 1rem;
-                    text-align: center;
-                    transition: all 0.7s ease-in-out;
-                    &:hover {
-                        background-color: $brandSecondary;
-
-                    }
-
+                    transition: all 0.5s ease-in-out;
+                    border: darken($primaryLight, 10%) 1px solid;
                     a{
+                        background-color: darken($primaryLight, 2%);
                         text-decoration: none;
-           
+                        transition: all 0.7s ease-in-out;
+                        &:hover {
+                            h4 {
+                                text-decoration: underline;
+                                color: $brand;
+                            }
+                        }
                         
                         h4 {
                             text-decoration: none;
-                            color: $primaryLight;
+                            color: $textLight;
+                        }
+                        p{
+                            width: 100%;
+                            color: $textLight;
                         }
                     }
+                    
         
                 }
             }

@@ -18,11 +18,13 @@
             list-style: none;
             display: flex;
             justify-content: space-around;
+             overflow: hidden;
             li {
                 flex-direction: row;
                 padding: 1rem 30px;
                 &:last-child {
                     padding-right: 20px;
+                     
                 }
                 a {
                     color: $textLight;
@@ -30,9 +32,26 @@
                     font-size: 1.1rem;
                     text-decoration: none;
                     transition: all 0.5s ease-in-out;
+                    position: relative;
+                  
                     &:hover {
-                        transform: scale(1.1);
-                        color: darken($textLight, 10%);
+                        color: $textLight;
+                        &:after {
+                           width: 100%;
+                        }
+                    }
+                    &:after {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 0%;
+                        content: ".";
+                        color: transparent;
+                        background: $brand;
+                        height: 1px;
+                              overflow: hidden;
                     }
                 }
             }
