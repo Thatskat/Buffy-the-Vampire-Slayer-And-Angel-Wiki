@@ -54,7 +54,7 @@ const BuffyEpisodesBySeasonPage = ({ season }) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch("https://buffy-angel-api.up.railway.app/api/buffy");
+  const response = await fetch("https://buffy-angel-api.onrender.com/api/buffy");
   const episodes = await response.json();
   const seasonList = episodes.map((episode) => episode.seasonNumber);
   const paths = seasonList.map((season) => ({
@@ -68,7 +68,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (context) => {
-  const response = await fetch("https://buffy-angel-api.up.railway.app/api/buffy");
+  const response = await fetch("https://buffy-angel-api.onrender.com/api/buffy");
   const episodes = await response.json();
   const seasonQuery = context.params.seasonNumber;
   const seasonMatch = episodes.filter(

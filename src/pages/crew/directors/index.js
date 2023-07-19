@@ -38,7 +38,7 @@ const DirectorInfoPage = ({ directors }) => {
 };
 
 export async function getStaticProps() {
-  const response = await fetch("https://buffy-angel-api.up.railway.app/api/directors");
+  const response = await fetch("https://buffy-angel-api.onrender.com/api/directors");
   const directors = await response.json();
 
   return {

@@ -47,7 +47,7 @@ const DirectorPage = ({ director }) => {
 
 export const getStaticPaths = async () => {
   const response = await fetch(
-    `https://buffy-angel-api.up.railway.app/api/directors`
+    `https://buffy-angel-api.onrender.com/api/directors`
   );
   const directors = await response.json();
   const idList = directors.map((director) => director._id);
@@ -61,7 +61,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const response = await fetch(
-    `https://buffy-angel-api.up.railway.app/api/directors`
+    `https://buffy-angel-api.onrender.com/api/directors`
   );
   const directors = await response.json();
   const directorQuery = context.params.directorId;

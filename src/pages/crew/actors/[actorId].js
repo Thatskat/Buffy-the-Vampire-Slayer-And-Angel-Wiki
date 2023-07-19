@@ -47,7 +47,7 @@ const ActorPage = ({ actor }) => {
 
 export const getStaticPaths = async () => {
   const response = await fetch(
-    `https://buffy-angel-api.up.railway.app/api/actors`
+    `https://buffy-angel-api.onrender.com/api/actors`
   );
   const actors = await response.json();
   const idList = actors.map((actor) => actor._id);
@@ -61,7 +61,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const response = await fetch(
-    `https://buffy-angel-api.up.railway.app/api/actors`
+    `https://buffy-angel-api.onrender.com/api/actors`
   );
   const actors = await response.json();
   const actorQuery = context.params.actorId;

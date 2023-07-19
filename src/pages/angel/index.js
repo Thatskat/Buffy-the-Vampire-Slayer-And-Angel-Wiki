@@ -114,7 +114,7 @@ const AngelOverviewPage = ({ angelEpisodes }) => {
 
 export async function getStaticProps() {
   const response = await fetch(
-    "https://buffy-angel-api.up.railway.app/api/angel/season/3/5"
+    "https://buffy-angel-api.onrender.com/api/angel/season/3/5"
   );
   const angelEpisodes = await response.json();
 

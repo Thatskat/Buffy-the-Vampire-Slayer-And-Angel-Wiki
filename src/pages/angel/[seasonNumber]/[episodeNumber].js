@@ -86,7 +86,7 @@ const AngelEpisodesPage = ({ episode }) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch(`https://buffy-angel-api.up.railway.app/api/angel`);
+  const response = await fetch(`https://buffy-angel-api.onrender.com/api/angel`);
   const episodes = await response.json();
 
   const paths = await episodes.map((episode) => ({
@@ -103,7 +103,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const response = await fetch(
-    `https://buffy-angel-api.up.railway.app/api/angel/season/${context.params.seasonNumber.toString()}/`
+    `https://buffy-angel-api.onrender.com/api/angel/season/${context.params.seasonNumber.toString()}/`
   );
   const episodes = await response.json();
   const episodeQuery = context.params.episodeNumber;
